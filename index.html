@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>YOUR BRAND | รับซื้อแบรนด์เนมมือสอง</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Noto Sans Thai', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#9A7950',
+              cream: '#F7F1E9',
+              dark: '#111111',
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 35px rgba(0,0,0,.06)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white text-[#1a1a1a] font-sans">
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-black/5">
+    <div class="max-w-[1280px] mx-auto px-5 lg:px-8 h-[76px] flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="shrink-0">
+        <div class="font-serif text-xl tracking-wide">YOUR BRAND</div>
+        <div class="text-[9px] text-gray-500 tracking-wider">
+          Luxury Brand Buy & Sell
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium">
+        <a href="#home" class="hover:text-brand-gold transition">หน้าแรก</a>
+        <a href="#about" class="hover:text-brand-gold transition">เกี่ยวกับเรา</a>
+        <a href="#categories" class="hover:text-brand-gold transition">รับซื้ออะไรบ้าง</a>
+        <a href="#brands" class="hover:text-brand-gold transition">แบรนด์ที่รับซื้อ</a>
+        <a href="#process" class="hover:text-brand-gold transition">ขั้นตอนการรับซื้อ</a>
+        <a href="#contact" class="hover:text-brand-gold transition">ติดต่อเรา</a>
+      </nav>
+
+      <!-- Contact -->
+      <div class="hidden md:flex items-center gap-5 text-sm">
+        <a href="tel:02XXXXXXXX"><i data-feather="phone" class="w-4 h-4 inline-block align-[-2px]"></i> 02-xxx-xxxx</a>
+        <a href="#" class="font-semibold">LINE</a>
+      </div>
+
+      <!-- Mobile -->
+      <button class="lg:hidden w-10 h-10 flex items-center justify-center">
+        <i data-feather="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section
+      id="home"
+      class="relative min-h-[620px] lg:min-h-[650px] bg-cover bg-center"
+      style="background-image:url('assets/images/hero.webp')"
+    >
+
+      <!-- optional overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#f8f2ea]/95 via-[#f8f2ea]/70 to-transparent"></div>
+
+      <div class="relative max-w-[1280px] mx-auto px-5 lg:px-8 py-20 lg:py-28">
+
+        <div class="max-w-[600px]">
+
+          <p class="font-medium text-sm lg:text-base mb-3">
+            ขายง่าย ได้ราคาดี คืนสู่มือของคุณด้วยแบรนด์เนม
+          </p>
+
+          <h1 class="text-[38px] sm:text-5xl lg:text-[58px] font-bold leading-[1.15] mb-3">
+            รับซื้อแบรนด์เนมมือสอง
+          </h1>
+
+          <h2 class="text-xl sm:text-2xl lg:text-[30px] font-semibold mb-5">
+            กระเป๋า นาฬิกา รองเท้า เครื่องประดับ
+          </h2>
+
+          <p class="text-gray-600 text-base lg:text-lg leading-8 mb-8">
+            ประเมินราคายุติธรรมโดยทีม รวดเร็ว ปลอดภัย<br class="hidden sm:block">
+            พร้อมบริการที่หน้าร้านในกรุงเทพฯ
+          </p>
+
+          <!-- CTA -->
+          <div class="flex flex-col sm:flex-row gap-3 mb-12">
+
+            <a
+              href="#contact"
+              class="inline-flex justify-center items-center gap-3
+                     bg-[#151515] text-white
+                     px-7 py-4 rounded-xl
+                     font-medium hover:bg-black transition"
+            >
+              <i data-feather="camera" class="w-5 h-5"></i>
+              ส่งรูปประเมินราคา
+            </a>
+
+            <a
+              href="#store"
+              class="inline-flex justify-center items-center gap-3
+                     bg-white/80 border border-gray-400
+                     px-7 py-4 rounded-xl
+                     font-medium hover:bg-white transition"
+            >
+              <i data-feather="map-pin" class="w-5 h-5"></i>
+              นัดเข้าร้าน
+            </a>
+
+          </div>
+
+          <!-- Trust -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-sm">
+
+            <div class="flex items-center gap-3">
+              <div class="text-xl"><i data-feather="check-circle" class="w-5 h-5"></i></div>
+              <div>
+                ประเมินราคาฟรี<br>
+                <span class="text-gray-500">ไม่มีค่าใช้จ่าย</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-xl"><i data-feather="award" class="w-5 h-5"></i></div>
+              <div>
+                ตรวจสอบสินค้า<br>
+                <span class="text-gray-500">โดยผู้เชี่ยวชาญ</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-xl"><i data-feather="home" class="w-5 h-5"></i></div>
+              <div>
+                มีหน้าร้านจริง<br>
+                <span class="text-gray-500">ในกรุงเทพฯ</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CATEGORIES
+    ====================================================== -->
+    <section id="categories" class="py-16 lg:py-20">
+
+      <div class="max-w-[1200px] mx-auto px-5">
+
+        <div class="text-center mb-10">
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            รับซื้ออะไรบ้าง?
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            เรารับซื้อสินค้าแบรนด์เนมมือสองหลากหลายประเภท
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <!-- Bag -->
+          <article class="rounded-xl overflow-hidden border border-gray-100 shadow-soft bg-white">
+
+            <img
+              src="assets/images/category-bag.webp"
+              alt="กระเป๋าแบรนด์เนม"
+              class="w-full aspect-[4/3] object-cover"
+            >
+
+            <div class="p-5">
+              <h3 class="font-semibold mb-2">
+                กระเป๋าแบรนด์เนม
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-6">
+                รับซื้อกระเป๋าแบรนด์เนมมือสองจากหลากหลายแบรนด์
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Watch -->
+          <article class="rounded-xl overflow-hidden border border-gray-100 shadow-soft bg-white">
+
+            <img
+              src="assets/images/category-watch.webp"
+              alt="นาฬิกาแบรนด์เนม"
+              class="w-full aspect-[4/3] object-cover"
+            >
+
+            <div class="p-5">
+              <h3 class="font-semibold mb-2">
+                นาฬิกาแบรนด์เนม
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-6">
+                รับซื้อนาฬิกาแบรนด์เนมและนาฬิกาหรู
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Shoes -->
+          <article class="rounded-xl overflow-hidden border border-gray-100 shadow-soft bg-white">
+
+            <img
+              src="assets/images/category-shoes.webp"
+              alt="รองเท้าแบรนด์เนม"
+              class="w-full aspect-[4/3] object-cover"
+            >
+
+            <div class="p-5">
+              <h3 class="font-semibold mb-2">
+                รองเท้าแบรนด์เนม
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-6">
+                รับซื้อรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย
+              </p>
+            </div>
+
+          </article>
+
+
+          <!-- Jewelry -->
+          <article class="rounded-xl overflow-hidden border border-gray-100 shadow-soft bg-white">
+
+            <img
+              src="assets/images/category-jewelry.webp"
+              alt="เครื่องประดับ"
+              class="w-full aspect-[4/3] object-cover"
+            >
+
+            <div class="p-5">
+              <h3 class="font-semibold mb-2">
+                เครื่องประดับ
+              </h3>
+
+              <p class="text-sm text-gray-500 leading-6">
+                รับซื้อเครื่องประดับแบรนด์เนมและสินค้าแฟชั่น
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         BRANDS
+    ====================================================== -->
+    <section id="brands" class="py-14">
+
+      <div class="max-w-[1000px] mx-auto px-5">
+
+        <div class="text-center mb-10">
+
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            แบรนด์ที่เรารับซื้อ
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            เรารับพิจารณาสินค้าจากแบรนด์ชั้นนำหลากหลายแบรนด์
+          </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-8 items-center">
+
+          <img src="assets/logos/chanel.svg" class="max-h-12 mx-auto" alt="Chanel">
+          <img src="assets/logos/lv.svg" class="max-h-12 mx-auto" alt="Louis Vuitton">
+          <img src="assets/logos/hermes.svg" class="max-h-12 mx-auto" alt="Hermes">
+          <img src="assets/logos/dior.svg" class="max-h-12 mx-auto" alt="Dior">
+          <img src="assets/logos/gucci.svg" class="max-h-12 mx-auto" alt="Gucci">
+          <img src="assets/logos/celine.svg" class="max-h-12 mx-auto" alt="Celine">
+
+          <img src="assets/logos/prada.svg" class="max-h-12 mx-auto" alt="Prada">
+          <img src="assets/logos/bottega.svg" class="max-h-12 mx-auto" alt="Bottega Veneta">
+          <img src="assets/logos/ysl.svg" class="max-h-12 mx-auto" alt="Saint Laurent">
+          <img src="assets/logos/loewe.svg" class="max-h-12 mx-auto" alt="Loewe">
+          <img src="assets/logos/fendi.svg" class="max-h-12 mx-auto" alt="Fendi">
+
+          <div class="text-sm text-gray-500 text-center">
+            และอีกมากมาย
+          </div>
+
+        </div>
+
+        <p class="text-center text-xs text-gray-400 mt-9">
+          *การรับซื้อขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า อุปกรณ์ประกอบ
+          และผลการตรวจสอบสินค้าเป็นรายกรณี
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         WHY US
+    ====================================================== -->
+    <section
+      id="about"
+      class="py-16 lg:py-20 bg-[#faf7f2]"
+    >
+
+      <div class="max-w-[1200px] mx-auto px-5">
+
+        <div class="text-center mb-12">
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            ทำไมต้องขายแบรนด์เนมกับเรา?
+          </h2>
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5">
+
+          <!-- 1 -->
+          <div class="text-center px-6 lg:border-r border-[#e4ddd4]">
+
+            <div class="w-14 h-14 rounded-full bg-[#f1e3d1]
+                        flex items-center justify-center
+                        mx-auto mb-5 text-2xl">
+              <i data-feather="search" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-semibold mb-3">
+              ประเมินตามรายละเอียดสินค้า
+            </h3>
+
+            <p class="text-sm text-gray-500 leading-6">
+              พิจารณาจากแบรนด์ รุ่น สภาพ อุปกรณ์ประกอบ
+              และปัจจัยต่างๆ
+            </p>
+
+          </div>
+
+
+          <!-- 2 -->
+          <div class="text-center px-6 lg:border-r border-[#e4ddd4]">
+
+            <div class="w-14 h-14 rounded-full bg-[#f1e3d1]
+                        flex items-center justify-center
+                        mx-auto mb-5 text-2xl">
+              <i data-feather="home" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-semibold mb-3">
+              มีหน้าร้านจริง
+            </h3>
+
+            <p class="text-sm text-gray-500 leading-6">
+              สามารถนัดหมายเพื่อนำสินค้าเข้ามาประเมินที่หน้าร้านได้
+            </p>
+
+          </div>
+
+
+          <!-- 3 -->
+          <div class="text-center px-6 lg:border-r border-[#e4ddd4]">
+
+            <div class="w-14 h-14 rounded-full bg-[#f1e3d1]
+                        flex items-center justify-center
+                        mx-auto mb-5 text-2xl">
+              <i data-feather="check-circle" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-semibold mb-3">
+              ตรวจสอบสินค้าก่อนรับซื้อ
+            </h3>
+
+            <p class="text-sm text-gray-500 leading-6">
+              สินค้าได้รับการตรวจสอบรายละเอียด
+              ก่อนเข้าสู่กระบวนการรับซื้อ
+            </p>
+
+          </div>
+
+
+          <!-- 4 -->
+          <div class="text-center px-6 lg:border-r border-[#e4ddd4]">
+
+            <div class="w-14 h-14 rounded-full bg-[#f1e3d1]
+                        flex items-center justify-center
+                        mx-auto mb-5 text-2xl">
+              <i data-feather="message-circle" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-semibold mb-3">
+              แจ้งรายละเอียดก่อนตัดสินใจ
+            </h3>
+
+            <p class="text-sm text-gray-500 leading-6">
+              ลูกค้าสามารถรับทราบรายละเอียด
+              และราคาเพื่อประกอบการตัดสินใจ
+            </p>
+
+          </div>
+
+
+          <!-- 5 -->
+          <div class="text-center px-6">
+
+            <div class="w-14 h-14 rounded-full bg-[#f1e3d1]
+                        flex items-center justify-center
+                        mx-auto mb-5 text-2xl">
+              <i data-feather="shopping-bag" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="font-semibold mb-3">
+              รับซื้อสินค้าหลากหลาย
+            </h3>
+
+            <p class="text-sm text-gray-500 leading-6">
+              ไม่ว่าจะเป็นกระเป๋า นาฬิกา รองเท้า
+              หรือเครื่องประดับ
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+    <section id="process" class="py-16 lg:py-20">
+
+      <div class="max-w-[1280px] mx-auto px-5">
+
+        <div class="text-center mb-12">
+
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            ขั้นตอนการรับซื้อ
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            ง่าย สะดวก รวดเร็ว
+          </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-3">
+
+          <!-- STEP -->
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              01
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="camera" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              ส่งรูปสินค้า
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              ถ่ายรูปสินค้าที่ต้องการขาย
+              ส่งมาให้เราประเมินเบื้องต้น
+            </p>
+
+          </div>
+
+
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              02
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="phone" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              ประเมินเบื้องต้น
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              ทีมงานพิจารณาข้อมูล
+              และประเมินราคาเบื้องต้น
+            </p>
+
+          </div>
+
+
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              03
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="calendar" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              นัดหมายเข้าร้าน
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              นัดหมายวันและเวลา
+              เพื่อนำสินค้าเข้ามาที่ร้าน
+            </p>
+
+          </div>
+
+
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              04
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="search" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              ตรวจสอบสินค้า
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              ตรวจสอบรายละเอียด
+              และความถูกต้องของสินค้า
+            </p>
+
+          </div>
+
+
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              05
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="message-circle" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              เสนอราคารับซื้อ
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              แจ้งราคาหลังตรวจสอบ
+              เพื่อให้ลูกค้าพิจารณา
+            </p>
+
+          </div>
+
+
+          <div class="relative bg-white border rounded-2xl p-6 text-center min-h-[210px]">
+
+            <span class="absolute -top-4 left-1/2 -translate-x-1/2
+                         w-9 h-9 rounded-full bg-[#816845]
+                         text-white text-xs flex items-center justify-center">
+              06
+            </span>
+
+            <div class="text-3xl mt-4 mb-4"><i data-feather="check-circle" class="w-8 h-8 mx-auto"></i></div>
+
+            <h3 class="font-semibold mb-2">
+              ตัดสินใจขาย
+            </h3>
+
+            <p class="text-xs text-gray-500 leading-5">
+              เมื่อตกลงราคาเรียบร้อย
+              ดำเนินการรับซื้อ
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         INSPECTION
+    ====================================================== -->
+    <section class="py-16 bg-[#fafafa]">
+
+      <div class="max-w-[1100px] mx-auto px-5">
+
+        <div class="text-center mb-10">
+
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            ตรวจสอบสินค้าอย่างละเอียด ก่อนรับซื้อ
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            เพื่อให้การซื้อขายเป็นไปอย่างชัดเจนและเป็นธรรม
+          </p>
+
+        </div>
+
+
+        <div class="grid lg:grid-cols-[350px_1fr] gap-10 items-center">
+
+          <img
+            src="assets/images/inspection.webp"
+            alt="ตรวจสอบสินค้าแบรนด์เนม"
+            class="w-full rounded-xl"
+          >
+
+
+          <ul class="divide-y">
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              แบรนด์และรุ่น
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              สภาพสินค้า
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              รายละเอียดงานและวัสดุ
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              Serial / Date Code หรือข้อมูลระบุตัวสินค้า
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              อุปกรณ์ประกอบ
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              ประวัติและเอกสารที่ลูกค้านำมาแสดง
+            </li>
+
+            <li class="py-3 flex gap-3">
+              <span class="text-brand-gold"><i data-feather="check" class="w-4 h-4 mt-1"></i></span>
+              ปัจจัยด้านตลาดของสินค้า
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         STORE
+    ====================================================== -->
+    <section
+      id="store"
+      class="bg-[#111] text-white"
+    >
+
+      <div class="grid lg:grid-cols-2">
+
+        <!-- Store image -->
+        <div>
+          <img
+            src="assets/images/store.webp"
+            alt="หน้าร้าน"
+            class="w-full h-full min-h-[420px] object-cover"
+          >
+        </div>
+
+
+        <!-- Information -->
+        <div class="p-8 lg:p-14 flex items-center">
+
+          <div class="max-w-xl">
+
+            <h2 class="text-2xl lg:text-3xl font-bold mb-3">
+              มีหน้าร้านจริงในกรุงเทพฯ
+            </h2>
+
+            <p class="text-gray-400 mb-8">
+              สามารถนัดหมายเพื่อนำสินค้าเข้ามาประเมินที่หน้าร้านได้
+            </p>
+
+
+            <div class="space-y-4 text-sm mb-8">
+
+              <div>
+                <i data-feather="map-pin" class="w-4 h-4 inline-block align-[-2px]"></i> ที่อยู่ร้าน (ระบุที่อยู่จริงของคุณ)
+              </div>
+
+              <div>
+                <i data-feather="phone" class="w-4 h-4 inline-block align-[-2px]"></i> 02-xxx-xxxx
+              </div>
+
+              <div>
+                <i data-feather="clock" class="w-4 h-4 inline-block align-[-2px]"></i> เปิดบริการ จันทร์ - วันเสาร์ เวลา 10:00 - 19:00 น.
+              </div>
+
+              <div>
+                LINE: @yourbrand
+              </div>
+
+            </div>
+
+
+            <a
+              href="#"
+              class="inline-flex bg-[#f2dfc6] text-black
+                     px-6 py-3 rounded-full font-medium"
+            >
+              เปิด Google Maps
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+    <section class="py-16 lg:py-20">
+
+      <div class="max-w-[1100px] mx-auto px-5">
+
+        <div class="text-center mb-10">
+
+          <h2 class="text-2xl lg:text-3xl font-bold">
+            คำถามที่พบบ่อย
+          </h2>
+
+          <p class="text-gray-500 mt-2">
+            ตอบทุกข้อสงสัย ก่อนตัดสินใจขาย
+          </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 gap-3">
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              รับซื้อแบรนด์อะไรบ้าง?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              เรารับซื้อสินค้าแบรนด์เนมหลากหลายแบรนด์
+              โดยพิจารณาตามรุ่นและสภาพสินค้า
+            </p>
+          </details>
+
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              รับซื้อของแบรนด์เนมมือสองสภาพใช้งานไหม?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              สามารถส่งรูปสินค้าเพื่อประเมินเบื้องต้นได้
+            </p>
+          </details>
+
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              ต้องมีใบเสร็จหรือกล่องครบหรือไม่?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              สามารถประเมินได้แม้อุปกรณ์ไม่ครบ
+              ทั้งนี้ขึ้นอยู่กับสินค้าแต่ละรายการ
+            </p>
+          </details>
+
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              มีหน้าร้านหรือไม่?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              มีหน้าร้าน สามารถนัดหมายเข้ามาประเมินสินค้าได้
+            </p>
+          </details>
+
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              ส่งรูปให้ประเมินก่อนได้ไหม?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              สามารถส่งรูปเพื่อประเมินราคาเบื้องต้นผ่าน LINE ได้
+            </p>
+          </details>
+
+
+          <details class="border rounded-lg p-5">
+            <summary class="cursor-pointer font-medium">
+              ใช้เอกสารอะไรในการขาย?
+            </summary>
+
+            <p class="pt-4 text-sm text-gray-500">
+              กรุณาติดต่อทีมงานเพื่อสอบถามเอกสารที่ใช้
+              สำหรับสินค้าแต่ละประเภท
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+    <section
+      id="contact"
+      class="relative bg-cover bg-center"
+      style="background-image:url('assets/images/cta-bg.webp')"
+    >
+
+      <div class="absolute inset-0 bg-black/70"></div>
+
+
+      <div class="relative max-w-[1100px] mx-auto px-5 py-14 text-white">
+
+        <div class="flex flex-col lg:flex-row
+                    justify-between items-center gap-8">
+
+          <div>
+
+            <h2 class="text-2xl lg:text-3xl font-bold">
+              พร้อมขายแบรนด์เนมของคุณแล้วหรือยัง?
+            </h2>
+
+            <p class="text-gray-300 mt-2">
+              ส่งรูปสินค้าให้เราประเมินเบื้องต้นได้เลย
+            </p>
+
+          </div>
+
+
+          <div class="flex flex-wrap justify-center gap-3">
+
+            <a
+              href="#"
+              class="border border-white
+                     px-6 py-3 rounded-xl
+                     hover:bg-white hover:text-black transition"
+            >
+              <i data-feather="camera" class="w-4 h-4 inline-block align-[-2px]"></i> ส่งรูปประเมินราคา
+            </a>
+
+
+            <a
+              href="#"
+              class="bg-green-500
+                     px-7 py-3 rounded-xl
+                     font-medium"
+            >
+              LINE ติดต่อเรา
+            </a>
+
+
+            <a
+              href="tel:02XXXXXXXX"
+              class="bg-white text-black
+                     px-7 py-3 rounded-xl
+                     font-medium"
+            >
+              <i data-feather="phone" class="w-4 h-4 inline-block align-[-2px]"></i> โทรหาเรา
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="bg-[#101010] text-white border-t border-white/10">
+
+    <div class="max-w-[1200px] mx-auto px-5 py-10">
+
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
+
+        <div>
+
+          <div class="font-serif text-xl">
+            YOUR BRAND
+          </div>
+
+          <div class="text-xs text-gray-500 mt-1">
+            Luxury Brand Buy & Sell
+          </div>
+
+        </div>
+
+
+        <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-400">
+
+          <a href="#home">หน้าแรก</a>
+          <a href="#about">เกี่ยวกับเรา</a>
+          <a href="#categories">รับซื้ออะไรบ้าง</a>
+          <a href="#brands">แบรนด์ที่รับซื้อ</a>
+          <a href="#process">ขั้นตอนการรับซื้อ</a>
+          <a href="#contact">ติดต่อเรา</a>
+
+        </nav>
+
+
+        <div class="text-sm text-gray-400">
+          <div><i data-feather="phone" class="w-4 h-4 inline-block align-[-2px]"></i> 02-xxx-xxxx</div>
+          <div class="mt-2">LINE @yourbrand</div>
+        </div>
+
+      </div>
+
+
+      <div class="border-t border-white/10 mt-8 pt-6
+                  flex flex-col md:flex-row
+                  justify-between gap-4
+                  text-xs text-gray-600">
+
+        <p>
+          © 2026 YOUR BRAND. All rights reserved.
+        </p>
+
+        <div class="flex gap-5">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>feather.replace();</script>
+</body>
+</html>
