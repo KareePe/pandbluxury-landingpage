@@ -1,0 +1,161 @@
+/* P and B Luxury - custom styles (ส่วนที่ Tailwind utility ทำไม่ได้) */
+
+/* สลับไอคอน menu <-> x ตอนเปิด/ปิดเมนูมือถือ */
+#menu-toggle .menu-icon {
+  position: absolute;
+  display: flex;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+#menu-toggle .icon-open {
+  opacity: 1;
+  transform: none;
+}
+#menu-toggle .icon-close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.7);
+}
+
+#menu-toggle[aria-expanded="true"] .icon-open {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.7);
+}
+#menu-toggle[aria-expanded="true"] .icon-close {
+  opacity: 1;
+  transform: none;
+}
+
+/* header หดตัว + มีเงาลอยตอน scroll */
+#site-header {
+  transition:
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+#site-header .header-bar {
+  transition: height 0.25s ease;
+}
+
+#site-header.is-scrolled .header-bar {
+  height: 75px;
+}
+
+#site-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 24px rgba(12, 14, 16, 0.07);
+}
+
+/* panel เมนูมือถือ คลี่ลงมาแทนที่จะเด้งเต็มความสูงทันที
+   จำกัดไว้เฉพาะจอเล็ก ไม่ให้ display:grid ไปทับ lg:hidden ของ Tailwind */
+@media (max-width: 1023px) {
+  #mobile-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition:
+      grid-template-rows 0.35s ease,
+      visibility 0s linear 0.35s;
+  }
+
+  #mobile-menu.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition:
+      grid-template-rows 0.35s ease,
+      visibility 0s;
+  }
+
+  #mobile-menu .menu-clip {
+    overflow: hidden;
+  }
+}
+
+/* ลิงก์ในเมนูมือถือ ทยอยจางเข้าทีละอัน */
+#mobile-menu nav a {
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    color 0.15s ease;
+}
+
+#mobile-menu.is-open nav a {
+  opacity: 1;
+}
+
+#mobile-menu.is-open nav a:nth-child(1) {
+  transition-delay: 0s;
+}
+#mobile-menu.is-open nav a:nth-child(2) {
+  transition-delay: 0.06s;
+}
+#mobile-menu.is-open nav a:nth-child(3) {
+  transition-delay: 0.12s;
+}
+#mobile-menu.is-open nav a:nth-child(4) {
+  transition-delay: 0.18s;
+}
+#mobile-menu.is-open nav a:nth-child(5) {
+  transition-delay: 0.24s;
+}
+#mobile-menu.is-open nav a:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+/* ปุ่ม CTA — เงานุ่ม ลอยขึ้นเล็กน้อยตอน hover */
+.cta {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+  box-shadow:
+    0 6px 18px -8px rgba(12, 14, 16, 0.42),
+    0 1px 2px rgba(12, 14, 16, 0.07);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 30px -12px rgba(12, 14, 16, 0.48),
+    0 2px 5px rgba(12, 14, 16, 0.1);
+}
+
+.cta:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 10px -6px rgba(12, 14, 16, 0.4),
+    0 1px 2px rgba(12, 14, 16, 0.08);
+}
+
+/* บนพื้นมืด เงาดำไม่ขับ ใช้ขอบเรืองแสงอ่อนแทน */
+.cta-on-dark {
+  box-shadow:
+    0 8px 22px -10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.cta-on-dark:hover {
+  box-shadow:
+    0 18px 34px -14px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #menu-toggle .menu-icon,
+  #site-header,
+  #site-header .header-bar,
+  #mobile-menu,
+  #mobile-menu nav a,
+  .cta {
+    transition: none;
+  }
+
+  .cta:hover {
+    transform: none;
+  }
+
+  #mobile-menu.is-open nav a {
+    transition-delay: 0s;
+  }
+}
