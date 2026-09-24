@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="th" class="scroll-smooth scroll-pt-[85px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Brands grid — แบบ A (สำรอง)</title>
+    <link rel="icon" href="assets/logo/pb-logo.webp" type="image/png" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans Thai", "sans-serif"],
+            },
+            colors: {
+              black: "#0c0e10",
+              brand: {
+                gold: "#9A7950",
+                cream: "#F7F1E9",
+                dark: "#0c0e10",
+              },
+            },
+            boxShadow: {
+              soft: "0 10px 35px rgba(0,0,0,.06)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <!-- section brands แบบ A (hairline grid) — เก็บไว้เป็นทางเลือก
+         จะใช้แทนของเดิม: ก๊อป <section id="brands"> ไปแทนใน index.html
+         แล้วย้าย CSS ด้านล่างไปไว้ใน assets/style.css -->
+    <style>
+      /* --w ใส่ไว้ที่ <img> แต่ละตัว · มือถือย่อเหลือ 75% */
+      .brand-grid-logo {
+        width: calc(var(--w) * 0.75px);
+        max-width: 100%;
+        height: auto;
+        opacity: 0.65;
+        transition:
+          opacity 0.35s ease,
+          transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      @media (min-width: 768px) {
+        .brand-grid-logo {
+          width: calc(var(--w) * 1px);
+        }
+      }
+
+      /* เส้นใช้ gap 1px บนพื้นสีเส้น — เส้นไม่ซ้อนหนาตรงมุม */
+      .a-grid {
+        gap: 1px;
+        background: rgba(12, 14, 16, 0.08);
+        border: 1px solid rgba(12, 14, 16, 0.08);
+      }
+      .a-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 120px;
+        padding: 0 16px;
+        background: #fff;
+        transition: background-color 0.35s ease;
+      }
+      .a-cell:hover {
+        background: #f7f1e9;
+      }
+      .a-cell:hover .brand-grid-logo {
+        opacity: 1;
+        transform: scale(1.06);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .a-cell,
+        .brand-grid-logo {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-brand-dark font-sans">
+      <section id="brands" class="bg-white py-16 lg:py-20">
+        <div class="max-w-[1100px] mx-auto px-5">
+          <div class="text-center mb-12">
+            <p class="text-[11px] tracking-[0.35em] uppercase text-[#816845] font-medium mb-3">Brands</p>
+            <h2 class="text-[28px] lg:text-[34px] font-light">แบรนด์ที่เรารับซื้อ</h2>
+            <p class="text-[15px] text-[#4a4541] mt-3">เรารับพิจารณาสินค้าจากแบรนด์ชั้นนำหลากหลายแบรนด์</p>
+          </div>
+          <div class="a-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
+            <div class="a-cell"><img src="assets/images/brands/chanel.webp" alt="Chanel" class="brand-grid-logo" style="--w: 72" /></div>
+            <div class="a-cell"><img src="assets/images/brands/louis.webp" alt="Louis Vuitton" class="brand-grid-logo" style="--w: 69" /></div>
+            <div class="a-cell"><img src="assets/images/brands/hermes.webp" alt="Hermès" class="brand-grid-logo" style="--w: 77" /></div>
+            <div class="a-cell"><img src="assets/images/brands/dior.webp" alt="Dior" class="brand-grid-logo" style="--w: 106" /></div>
+            <div class="a-cell"><img src="assets/images/brands/gucci.webp" alt="Gucci" class="brand-grid-logo" style="--w: 85" /></div>
+            <div class="a-cell"><img src="assets/images/brands/celine.webp" alt="Celine" class="brand-grid-logo" style="--w: 119" /></div>
+            <div class="a-cell"><img src="assets/images/brands/prada.webp" alt="Prada" class="brand-grid-logo" style="--w: 133" /></div>
+            <div class="a-cell"><img src="assets/images/brands/bottega.webp" alt="Bottega Veneta" class="brand-grid-logo" style="--w: 94" /></div>
+            <div class="a-cell"><img src="assets/images/brands/saint.webp" alt="Saint Laurent" class="brand-grid-logo" style="--w: 148" /></div>
+            <div class="a-cell"><img src="assets/images/brands/loewe.webp" alt="Loewe" class="brand-grid-logo" style="--w: 57" /></div>
+            <div class="a-cell a-more col-span-2">
+              <span class="text-[13px] tracking-wide text-[#816845]">และอีกมากมาย</span>
+            </div>
+          </div>
+          <p class="text-center text-xs text-[#8a847d] mt-10">*การรับซื้อขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า อุปกรณ์ประกอบ และผลการตรวจสอบสินค้าเป็นรายกรณี</p>
+        </div>
+      </section>
+  </body>
+</html>

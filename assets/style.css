@@ -1,5 +1,87 @@
 /* P and B Luxury - custom styles (ส่วนที่ Tailwind utility ทำไม่ได้) */
 
+/* ---------- Preloader ---------- */
+/* ต้องอยู่ต้นไฟล์และไม่ใช้ Tailwind — ต้องขึ้นทันทีก่อน Tailwind CDN คอมไพล์เสร็จ */
+html.is-loading {
+  overflow: hidden;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: #f7f1e9;
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1) 0.15s;
+}
+/* ปิด: เนื้อหาจางก่อน แล้วม่านเลื่อนขึ้น */
+#preloader.is-done {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+.preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
+}
+#preloader.is-done .preloader-inner {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.preloader-logo {
+  height: 64px;
+  width: auto;
+  animation: preloader-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+/* เส้นทองวิ่งไปกลับ (ไม่รู้ % จริง จึงไม่ทำเป็นหลอด progress) */
+.preloader-line {
+  position: relative;
+  width: 120px;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(154, 121, 80, 0.2);
+}
+.preloader-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: #9a7950;
+  animation: preloader-run 1.2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+@keyframes preloader-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes preloader-run {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #preloader {
+    transition: opacity 0.3s ease;
+  }
+  #preloader.is-done {
+    transform: none;
+    opacity: 0;
+  }
+  .preloader-logo,
+  .preloader-line::after {
+    animation: none;
+  }
+}
+
+
 /* สลับไอคอน menu <-> x ตอนเปิด/ปิดเมนูมือถือ */
 #menu-toggle .menu-icon {
   position: absolute;
@@ -141,13 +223,991 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* ---------- scroll reveal ---------- */
+/* ใส่ .is-in ด้วย IntersectionObserver ใน script.js · --i = ลำดับหน่วงทีละ 90ms */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Categories ---------- */
+/* สีพื้นเดียวกับขอบรูปสินค้า รูปจะกลืนกับกรอบ */
+.tile {
+  background-color: #ece1d4;
+}
+/* ไฟล์รูปต้นฉบับมีขอบสีอ่อน ~1px — ขยายนิดเดียวให้ขอบหลุดออกนอกกรอบ
+   ใช้ property scale แยกจาก transform จึงซ้อนกับ group-hover:scale ได้ */
+.tile > img {
+  scale: 1.04;
+}
+
+/* เส้นบนการ์ดวาดจากซ้ายไปขวาตอนเข้า viewport */
+.cat-card .cat-rule {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms + 150ms);
+}
+.cat-card.is-in .cat-rule {
+  transform: scaleX(1);
+}
+
+/* ข้อความใต้รูป: ชื่อขยับขึ้น + เส้นทองลากใต้ชื่อ แล้วคำอธิบายตามมาช้ากว่านิดหนึ่ง
+   เส้นทำด้วย background-image บน inline-block จึงยาวเท่าตัวอักษรพอดี
+   จำกัดเฉพาะอุปกรณ์ที่ hover ได้ — จอสัมผัสจะค้างสถานะ hover หลังแตะ */
+.cat-title {
+  display: inline-block;
+  padding-bottom: 3px;
+  background: linear-gradient(#9a7950, #9a7950) left bottom / 0 1px no-repeat;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-size 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.cat-desc {
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .cat-card:hover .cat-title,
+  .cat-card:has(.cat-media:focus-visible) .cat-title {
+    transform: translateY(-4px);
+    background-size: 100% 1px;
+    transition-delay: 0s, 0.08s;
+  }
+  .cat-card:hover .cat-desc,
+  .cat-card:has(.cat-media:focus-visible) .cat-desc {
+    transform: translateY(-4px);
+    color: #2f2b28;
+    transition-delay: 0.07s, 0s;
+  }
+}
+
+.cat-media {
+  cursor: zoom-in;
+}
+/* ม่านบาง ๆ ให้ไอคอนตาอ่านออกบนรูปสีอ่อน */
+.cat-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 14, 16, 0.18);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cat-eye {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0c0e10;
+  box-shadow: 0 8px 24px rgba(12, 14, 16, 0.18);
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.3s ease,
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1.3);
+}
+.cat-eye svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.6;
+}
+
+.cat-card:hover .cat-media::after,
+.cat-media:focus-visible::after {
+  opacity: 1;
+}
+.cat-card:hover .cat-eye,
+.cat-media:focus-visible .cat-eye {
+  opacity: 1;
+  transform: none;
+}
+.cat-media:focus-visible {
+  outline: 2px solid #9a7950;
+  outline-offset: 3px;
+}
+
+/* จอสัมผัสไม่มี hover — โชว์ไอคอนเล็ก ๆ ที่มุมล่างขวาตลอด ไม่บังสินค้า */
+@media (hover: none) {
+  .cat-eye {
+    opacity: 1;
+    transform: none;
+    left: auto;
+    top: auto;
+    right: 10px;
+    bottom: 10px;
+    margin: 0;
+    width: 36px;
+    height: 36px;
+  }
+  .cat-eye svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ---------- Brands (marquee) ---------- */
+/* --w ใส่ไว้ที่ <img> แต่ละตัวใน index.html · มือถือย่อเหลือ 75% */
+.brand-logo {
+  width: calc(var(--w) * 0.75px);
+  max-width: none;
+  height: auto;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+.brand-logo:hover {
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .brand-logo {
+    width: calc(var(--w) * 1px);
+  }
+}
+
+/* ขอบซ้ายขวาจางหาย */
+.brand-track {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.brand-list {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  padding-right: 56px; /* ช่องว่างตรงรอยต่อชุดซ้ำ ต้องเท่ากับ gap ไม่งั้นกระตุก */
+  animation: brand-marquee 38s linear infinite;
+}
+@media (min-width: 768px) {
+  .brand-list {
+    gap: 72px;
+    padding-right: 72px;
+  }
+}
+.brand-reverse .brand-list {
+  animation-direction: reverse;
+  animation-duration: 44s;
+}
+.brand-marquee:hover .brand-list {
+  animation-play-state: paused;
+}
+@keyframes brand-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ไม่เอา motion — หยุดวิ่ง จัดโลโก้เป็นกลุ่มตรงกลาง และซ่อนชุดซ้ำ */
 @media (prefers-reduced-motion: reduce) {
+  .brand-track {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .brand-list {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 32px;
+    padding: 0 20px;
+  }
+  .brand-list [aria-hidden="true"],
+  .brand-reverse {
+    display: none;
+  }
+}
+
+/* ---------- Why us (#about) ---------- */
+/* --mx/--my (ทั้ง section) และ --x/--y (แต่ละการ์ด) มาจาก script.js
+   ทำงานเฉพาะเมาส์จริง — จอสัมผัสจะเห็นการ์ดนิ่ง ๆ */
+.why-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 30%),
+    rgba(154, 121, 80, 0.14),
+    transparent 60%
+  );
+}
+
+.why-card {
+  position: relative;
+  min-height: 230px;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(12, 14, 16, 0.06);
+  overflow: hidden;
+}
+/* ขอบเรืองสีทองตรงตำแหน่งเมาส์ — mask ให้เหลือแค่เส้นขอบ */
+.why-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: radial-gradient(
+    300px circle at var(--x, 50%) var(--y, 50%),
+    #9a7950,
+    transparent 70%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.why-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    400px circle at var(--x, 50%) var(--y, 50%),
+    rgba(154, 121, 80, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.why:hover .why-card::before,
+.why:hover .why-card::after {
+  opacity: 1;
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  /* border-radius: 12px; */
+  /* color: #816845; */
+  /* background: rgba(154, 121, 80, 0.1); */
+  /* border: 1px solid rgba(154, 121, 80, 0.22); */
+}
+
+/* ทองเปลว + ประกายวิ่ง — โทนเข้มกว่าเวอร์ชันพื้นดำ ให้อ่านออกบนพื้นครีม */
+.why-foil {
+  background: linear-gradient(100deg, #7a5f3c 20%, #d2b27f 42%, #a8875a 52%, #7a5f3c 72%) 0 0 / 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: why-foil 4.5s ease-in-out infinite;
+}
+@keyframes why-foil {
+  0%,
+  20% {
+    background-position: 100% 0;
+  }
+  80%,
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* ---------- Process (#process) ---------- */
+.step-phase {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.step-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #816845;
+  border: 1px solid rgba(154, 121, 80, 0.4);
+}
+.step-pill-dark {
+  background: #0c0e10;
+  border-color: #0c0e10;
+  color: #e8d3ad;
+}
+/* เส้นประบอกว่ายังมีขั้นต่อ */
+.step-rule {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(154, 121, 80, 0.5) 0 4px,
+    transparent 4px 9px
+  );
+}
+
+.step-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: 18px;
+  background: #fff;
+  transition:
+    opacity 0.7s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.5s ease;
+}
+/* ความสูงเท่ากันเฉพาะตอนวางหลายคอลัมน์ — มือถือคอลัมน์เดียวปล่อยตามเนื้อหา */
+@media (min-width: 640px) {
+  .step-card {
+    min-height: 220px;
+  }
+}
+/* ยกได้หลัง reveal เสร็จแล้วเท่านั้น ไม่งั้น hover ระหว่างจางเข้าจะกระตุก */
+.step-card.is-in:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 44px -26px rgba(12, 14, 16, 0.3);
+  transition-delay: 0s;
+}
+.step-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: #9a7950;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.step-card:hover .step-bar {
+  transform: scaleX(1);
+}
+.step-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #816845;
+  background: #f7f1e9;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1.4);
+}
+.step-card:hover .step-icon {
+  background: #0c0e10;
+  color: #e8d3ad;
+  transform: rotate(-8deg);
+}
+
+/* ---------- Inspection (#inspection) ---------- */
+/* isolate: ให้กรอบ z-index:-1 อยู่หลังรูป แต่ไม่จมหลังพื้นขาวของ section */
+.inspect-media {
+  position: relative;
+  isolation: isolate;
+}
+/* กรอบทองเส้นบางเยื้องออกไปด้านหลังรูป */
+.inspect-media::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid rgba(154, 121, 80, 0.45);
+  border-radius: 1rem;
+  z-index: -1;
+  transition: inset 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.inspect-media:hover::before {
+  inset: 10px -10px -10px 10px;
+}
+.inspect-media img {
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.inspect-media:hover img {
+  transform: scale(1.04);
+}
+/* มุมซ้ายบนเป็นพื้นว่างของภาพ — ไม่บังโลโก้บนกระเป๋า */
+.inspect-badge {
+  position: absolute;
+  left: -14px;
+  top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 40px -18px rgba(12, 14, 16, 0.35);
+}
+@media (max-width: 639px) {
+  .inspect-media::before {
+    inset: 12px -10px -12px 10px;
+  }
+  .inspect-badge {
+    left: 12px;
+    top: 12px;
+  }
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 4px;
+  border-bottom: 1px solid rgba(12, 14, 16, 0.08);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.3s ease,
+    padding 0.35s ease;
+}
+.check-row.is-in:hover {
+  padding-left: 12px;
+  background: #faf7f2;
+  transition-delay: 0s;
+}
+/* วงกลมเครื่องหมายถูก — เติมสีทองทีละข้อตอน reveal */
+.check-mark {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #9a7950;
+  border: 1px solid rgba(154, 121, 80, 0.4);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+  transition-delay: calc(var(--i, 0) * 90ms + 400ms);
+}
+.check-row.is-in .check-mark {
+  background: #9a7950;
+  border-color: #9a7950;
+  color: #fff;
+}
+
+/* ---------- Store (#store) ---------- */
+.store-photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  aspect-ratio: 1 / 1;
+  background: #16181b;
+}
+.store-photo img {
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.store-photo:hover img {
+  transform: scale(1.04);
+}
+/* lg: สูงเท่าคอลัมน์ข้อมูล/แผนที่ ไม่ล็อกเป็นสี่เหลี่ยมจัตุรัส */
+@media (min-width: 1024px) {
+  .store-photo {
+    aspect-ratio: auto;
+    min-height: 100%;
+  }
+}
+.store-tag {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #e8d3ad;
+  background: rgba(12, 14, 16, 0.55);
+  border: 1px solid rgba(232, 211, 173, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.store-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.store-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #e8d3ad;
+  background: rgba(154, 121, 80, 0.15);
+  border: 1px solid rgba(154, 121, 80, 0.3);
+}
+
+/* แผนที่ลดสีลงให้กลืนกับพื้นดำ — hover แล้วกลับเป็นสีจริง */
+.store-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  border-radius: 18px;
+  background: #16181b;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.store-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.85) contrast(1.05);
+  transition: filter 0.5s ease;
+}
+.store-map:hover iframe {
+  filter: none;
+}
+@media (min-width: 1024px) {
+  .store-map {
+    min-height: 0;
+  }
+}
+
+/* ---------- FAQ (#faq) ---------- */
+.faq-item {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(12, 14, 16, 0.07);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.4s ease;
+}
+.faq-item:hover {
+  border-color: rgba(154, 121, 80, 0.35);
+}
+.faq-item[open] {
+  border-color: rgba(154, 121, 80, 0.5);
+  box-shadow: 0 18px 40px -26px rgba(12, 14, 16, 0.25);
+}
+
+.faq-q {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 22px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+.faq-q::-webkit-details-marker {
+  display: none;
+}
+.faq-q:focus-visible {
+  outline: 2px solid #9a7950;
+  outline-offset: 2px;
+  border-radius: 16px;
+}
+
+/* ไอคอน + หมุนเป็น × ตอนเปิด */
+.faq-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: 1px solid rgba(154, 121, 80, 0.4);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 1.5px;
+  margin: -0.75px 0 0 -5px;
+  background: #816845;
+  transition: background-color 0.3s ease;
+}
+.faq-icon::after {
+  transform: rotate(90deg);
+}
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+  background: #0c0e10;
+  border-color: #0c0e10;
+}
+.faq-item[open] .faq-icon::before,
+.faq-item[open] .faq-icon::after {
+  background: #e8d3ad;
+}
+
+.faq-a {
+  padding: 0 22px 22px 62px;
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: #4a4541;
+}
+.faq-item[open] .faq-a {
+  animation: faq-in 0.4s ease;
+}
+@keyframes faq-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+/* รายชื่อแบรนด์ในคำตอบข้อ 1 */
+.faq-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.faq-brands li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #0c0e10;
+  background: #faf7f2;
+  border: 1px solid rgba(154, 121, 80, 0.25);
+}
+
+/* เบราว์เซอร์ที่รองรับ (Chrome 131+) — กาง/หุบแบบลื่น ไม่รองรับก็เปิดทันทีตามปกติ */
+@supports (interpolate-size: allow-keywords) {
+  .faq-item {
+    interpolate-size: allow-keywords;
+  }
+  .faq-item::details-content {
+    height: 0;
+    overflow: hidden;
+    transition:
+      height 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+      content-visibility 0.4s allow-discrete;
+  }
+  .faq-item[open]::details-content {
+    height: auto;
+  }
+}
+
+/* ---------- Final CTA: หมวดที่รับซื้อ (#contact) ---------- */
+.cta-cat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.85);
+}
+.cta-cat-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #e8d3ad;
+  background: rgba(154, 121, 80, 0.14);
+  border: 1px solid rgba(232, 211, 173, 0.3);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1.4);
+}
+.cta-cat:hover .cta-cat-icon {
+  background: #e8d3ad;
+  color: #0c0e10;
+  transform: translateY(-3px);
+}
+.cta-cat-icon svg {
+  stroke-width: 1.6;
+}
+
+/* ---------- Footer ---------- */
+.footer-link {
+  align-self: flex-start;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+.footer-link:hover {
+  color: #e8d3ad;
+  transform: translateX(3px);
+}
+
+.social-btn {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(232, 211, 173, 0.6);
+  transform: translateY(-2px);
+}
+.social-btn:focus-visible {
+  outline: 2px solid #e8d3ad;
+  outline-offset: 3px;
+}
+
+/* ---------- Back to top ---------- */
+/* ซ่อนไว้จนกว่า script.js จะใส่ .is-visible (เลื่อนพ้น #home) */
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #e8d3ad;
+  background: #0c0e10;
+  box-shadow: 0 12px 30px -10px rgba(12, 14, 16, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.9);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1.3),
+    visibility 0s linear 0.35s,
+    background-color 0.25s ease;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1.3),
+    visibility 0s,
+    background-color 0.25s ease;
+}
+.back-to-top:hover {
+  background: #23272d;
+}
+.back-to-top:hover svg.feather {
+  animation: btt-nudge 0.6s ease;
+}
+.back-to-top:focus-visible {
+  outline: 2px solid #9a7950;
+  outline-offset: 3px;
+}
+@keyframes btt-nudge {
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* วงแหวนความคืบหน้า — --progress 0→1 มาจาก script.js */
+.btt-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+.btt-ring circle {
+  fill: none;
+  stroke: #9a7950;
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--progress, 0));
+}
+@media (min-width: 1024px) {
+  .back-to-top {
+    right: 32px;
+    bottom: 32px;
+  }
+}
+
+/* ---------- Gallery popup (<dialog>) ---------- */
+.gallery {
+  width: min(760px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: #fff;
+  color: #0c0e10;
+  box-shadow: 0 30px 80px rgba(12, 14, 16, 0.3);
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.gallery.is-open {
+  opacity: 1;
+  transform: none;
+}
+.gallery::backdrop {
+  background: rgba(12, 14, 16, 0);
+  backdrop-filter: blur(0);
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+.gallery.is-open::backdrop {
+  background: rgba(12, 14, 16, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.gallery-panel {
+  padding: 18px;
+}
+@media (min-width: 640px) {
+  .gallery-panel {
+    padding: 24px;
+  }
+}
+
+.gallery-stage {
+  aspect-ratio: 4 / 3;
+  max-height: calc(100dvh - 230px);
+  width: 100%;
+  touch-action: pan-y;
+}
+.gallery-img {
+  transition: opacity 0.25s ease;
+}
+.gallery-img.is-swapping {
+  opacity: 0;
+}
+
+.gallery-btn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #0c0e10;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.gallery-btn svg {
+  width: 18px;
+  height: 18px;
+}
+.gallery-close {
+  border: 1px solid rgba(12, 14, 16, 0.1);
+}
+.gallery-close:hover {
+  background: #0c0e10;
+  color: #fff;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  margin-top: -19px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 14px rgba(12, 14, 16, 0.12);
+}
+.gallery-nav:hover {
+  background: #fff;
+}
+
+.gallery-thumb {
+  flex: 0 0 auto;
+  width: 72px;
+  aspect-ratio: 4 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0.55;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  transition:
+    opacity 0.2s ease,
+    outline-color 0.2s ease;
+}
+.gallery-thumb:hover {
+  opacity: 0.85;
+}
+.gallery-thumb[aria-current="true"] {
+  opacity: 1;
+  outline-color: #9a7950;
+}
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* มีรูปเดียว — ซ่อนปุ่มเลื่อนและแถบ thumbnail */
+.gallery.is-single .gallery-nav,
+.gallery.is-single .gallery-thumbs,
+.gallery.is-single .gallery-count {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-foil,
+  .back-to-top:hover svg.feather,
+  .faq-item[open] .faq-a {
+    animation: none;
+  }
+
   #menu-toggle .menu-icon,
   #site-header,
   #site-header .header-bar,
   #mobile-menu,
   #mobile-menu nav a,
-  .cta {
+  .cta,
+  .reveal,
+  .cat-card .cat-rule,
+  .cat-eye,
+  .cat-title,
+  .cat-desc,
+  .back-to-top,
+  .footer-link,
+  .social-btn,
+  .cta-cat-icon,
+  .faq-item,
+  .faq-item::details-content,
+  .faq-icon,
+  .store-photo img,
+  .store-map iframe,
+  .inspect-media::before,
+  .inspect-media img,
+  .check-row,
+  .check-mark,
+  .step-card,
+  .step-bar,
+  .step-icon,
+  .why-card::before,
+  .why-card::after,
+  .gallery,
+  .gallery::backdrop,
+  .gallery-img {
     transition: none;
   }
 
