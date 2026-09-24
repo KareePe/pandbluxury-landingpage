@@ -41,6 +41,22 @@
       };
     </script>
 
+    <!-- รูป hero (LCP) อยู่ใน CSS background — preload ให้เบราว์เซอร์เริ่มโหลดทันที
+         ไม่ต้องรอ Tailwind คอมไพล์ class bg-[url(...)] ก่อน -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/bg-home-mb.webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/images/bg-home.webp"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="assets/style.css" />
     <noscript><style>#preloader { display: none; }</style></noscript>
   </head>
@@ -78,7 +94,12 @@
           }, wait);
         }
 
-        window.addEventListener("load", hide);
+        // ปิดเมื่อ HTML พร้อม ไม่ต้องรอรูปทั้งหน้า (load) — รูปที่เหลือโหลดต่อเบื้องหลัง
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", hide);
+        } else {
+          hide();
+        }
         setTimeout(hide, 5000); // กันค้าง: รูปหรือ CDN ช้า ก็ปิดที่ 5 วินาที
       })();
     </script>
@@ -403,23 +424,15 @@
                 >01</span
               >
 
-              <!-- data-gallery: รูปที่จะโชว์ใน popup คั่นด้วย , -->
-              <button
-                type="button"
-                class="cat-media tile relative block w-full aspect-[4/3] overflow-hidden"
-                data-gallery="assets/images/categories/categories-1.webp,assets/images/categories/categories-5.webp"
-                data-title="กระเป๋าแบรนด์เนม"
-                aria-label="ดูรูปเพิ่มเติม: กระเป๋าแบรนด์เนม"
+              <div
+                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
                   src="assets/images/categories/categories-1.webp"
                   alt="กระเป๋าแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <span class="cat-eye" aria-hidden="true">
-                  <i data-feather="eye"></i>
-                </span>
-              </button>
+              </div>
 
               <h3 class="cat-title mt-5 text-[17px] font-medium">
                 กระเป๋าแบรนด์เนม
@@ -438,23 +451,15 @@
                 >02</span
               >
 
-              <!-- data-gallery: รูปที่จะโชว์ใน popup คั่นด้วย , -->
-              <button
-                type="button"
-                class="cat-media tile relative block w-full aspect-[4/3] overflow-hidden"
-                data-gallery="assets/images/categories/categories-2.webp"
-                data-title="นาฬิกาแบรนด์เนม"
-                aria-label="ดูรูปเพิ่มเติม: นาฬิกาแบรนด์เนม"
+              <div
+                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
                   src="assets/images/categories/categories-2.webp"
                   alt="นาฬิกาแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <span class="cat-eye" aria-hidden="true">
-                  <i data-feather="eye"></i>
-                </span>
-              </button>
+              </div>
 
               <h3 class="cat-title mt-5 text-[17px] font-medium">
                 นาฬิกาแบรนด์เนม
@@ -473,23 +478,15 @@
                 >03</span
               >
 
-              <!-- data-gallery: รูปที่จะโชว์ใน popup คั่นด้วย , -->
-              <button
-                type="button"
-                class="cat-media tile relative block w-full aspect-[4/3] overflow-hidden"
-                data-gallery="assets/images/categories/categories-3.webp"
-                data-title="รองเท้าแบรนด์เนม"
-                aria-label="ดูรูปเพิ่มเติม: รองเท้าแบรนด์เนม"
+              <div
+                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
                   src="assets/images/categories/categories-3.webp"
                   alt="รองเท้าแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <span class="cat-eye" aria-hidden="true">
-                  <i data-feather="eye"></i>
-                </span>
-              </button>
+              </div>
 
               <h3 class="cat-title mt-5 text-[17px] font-medium">
                 รองเท้าแบรนด์เนม
@@ -508,23 +505,15 @@
                 >04</span
               >
 
-              <!-- data-gallery: รูปที่จะโชว์ใน popup คั่นด้วย , -->
-              <button
-                type="button"
-                class="cat-media tile relative block w-full aspect-[4/3] overflow-hidden"
-                data-gallery="assets/images/categories/categories-4.webp"
-                data-title="เครื่องประดับ"
-                aria-label="ดูรูปเพิ่มเติม: เครื่องประดับ"
+              <div
+                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
                   src="assets/images/categories/categories-4.webp"
                   alt="เครื่องประดับ"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-                <span class="cat-eye" aria-hidden="true">
-                  <i data-feather="eye"></i>
-                </span>
-              </button>
+              </div>
 
               <h3 class="cat-title mt-5 text-[17px] font-medium">
                 เครื่องประดับ
@@ -535,6 +524,21 @@
                 รับซื้อเครื่องประดับแบรนด์เนมและสินค้าแฟชั่น
               </p>
             </article>
+          </div>
+
+          <div class="mt-12 text-center reveal">
+            <!-- data-gallery: รูปที่จะโชว์ใน popup คั่นด้วย , -->
+            <button
+              type="button"
+              class="cat-more"
+              data-gallery="assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_13_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_3_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_8_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_12_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_20_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_11_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_2_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_15_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_16_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_5_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_6_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_18_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_7_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_14_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_4_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_9_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_10_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_17_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_21_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_22_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_23_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_1_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_19_0.jpg"
+              data-title="รับซื้ออะไรบ้าง"
+              aria-label="ดูแกลเลอรีสินค้าที่รับซื้อ"
+            >
+              ดูแกลเลอรี
+              <span class="cat-more-count"></span>
+              <i data-feather="arrow-right"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -936,7 +940,7 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/gel-icon.png" alt=""
+                    ><img src="assets/icons/gel-icon.webp" alt="" width="44" height="44"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >01</span
@@ -957,7 +961,7 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/shop-icon.png" alt=""
+                    ><img src="assets/icons/shop-icon.webp" alt="" width="44" height="44"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >02</span
@@ -978,7 +982,7 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/check-sh-icon.png" alt=""
+                    ><img src="assets/icons/check-sh-icon.webp" alt="" width="44" height="44"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >03</span
@@ -999,7 +1003,7 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/message-icon.png" alt=""
+                    ><img src="assets/icons/message-icon.webp" alt="" width="44" height="44"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >04</span
@@ -1020,7 +1024,7 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/bag-icon.png" alt=""
+                    ><img src="assets/icons/bag-icon.webp" alt="" width="44" height="44"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >05</span
@@ -1576,7 +1580,7 @@
         id="contact"
         class="relative bg-cover bg-center"
         style="
-          background-image: url(&quot;assets/images/bg-final-cta.png&quot;);
+          background-image: url(&quot;assets/images/bg-final-cta.webp&quot;);
         "
       >
         <div class="absolute inset-0 bg-black/70"></div>

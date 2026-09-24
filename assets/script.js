@@ -151,6 +151,8 @@ feather.replace();
   }
 
   triggers.forEach(function (t) {
+    const count = t.querySelector(".cat-more-count");
+    if (count) count.textContent = "(" + t.dataset.gallery.split(",").length + ")";
     t.addEventListener("click", function () {
       open(t);
     });
