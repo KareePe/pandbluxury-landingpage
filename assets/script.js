@@ -8,7 +8,7 @@ feather.replace();
   const menu = document.getElementById("mobile-menu");
   if (!toggle || !menu) return;
 
-  const desktop = window.matchMedia("(min-width: 1024px)");
+  const desktop = window.matchMedia("(min-width: 1280px)");
 
   // aria-expanded drives the icon cross-fade (ดู #menu-toggle ใน assets/style.css)
   function setOpen(open) {
@@ -127,7 +127,7 @@ feather.replace();
       b.type = "button";
       b.className = "gallery-thumb tile";
       b.setAttribute("aria-label", "รูปที่ " + (i + 1));
-      b.innerHTML = '<img src="' + src + '" alt="" />';
+      b.innerHTML = '<img src="' + src + '" alt="" loading="lazy" decoding="async" />';
       b.addEventListener("click", function () {
         show(i);
       });
@@ -233,13 +233,14 @@ feather.replace();
 })();
 
 (function () {
-  // ปุ่มกลับขึ้นบนสุด: โผล่เมื่อ #home พ้นจอ + วงแหวนบอกระยะที่เลื่อน
+  // ปุ่มลอย (LINE · โทร · กลับขึ้นบนสุด): โผล่พร้อมกันเมื่อ #home พ้นจอ + วงแหวนบอกระยะที่เลื่อน
   const btn = document.getElementById("back-to-top");
+  const dock = btn && btn.closest(".float-dock");
   const hero = document.getElementById("home");
-  if (!btn || !hero) return;
+  if (!btn || !dock || !hero) return;
 
   new IntersectionObserver(function (entries) {
-    btn.classList.toggle("is-visible", !entries[0].isIntersecting);
+    dock.classList.toggle("is-visible", !entries[0].isIntersecting);
   }).observe(hero);
 
   let ticking = false;

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pandbluxury.com/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/og-image.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/shoppandb.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/inspection.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/categories/categories-1.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/categories/categories-2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/categories/categories-3.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pandbluxury.com/assets/images/categories/categories-4.webp</image:loc>
+    </image:image>
+  </url>
+</urlset>

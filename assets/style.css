@@ -130,8 +130,9 @@ html.is-loading {
 }
 
 /* panel เมนูมือถือ คลี่ลงมาแทนที่จะเด้งเต็มความสูงทันที
-   จำกัดไว้เฉพาะจอเล็ก ไม่ให้ display:grid ไปทับ lg:hidden ของ Tailwind */
-@media (max-width: 1023px) {
+   จำกัดไว้เฉพาะจอเล็ก ไม่ให้ display:grid ไปทับ xl:hidden ของ Tailwind
+   (ใช้ 1279px เพราะชื่อเมนูยาว ใส่แถวเดียวไม่พอก่อนถึง xl) */
+@media (max-width: 1279px) {
   #mobile-menu {
     display: grid;
     grid-template-rows: 0fr;
@@ -221,6 +222,96 @@ html.is-loading {
   box-shadow:
     0 18px 34px -14px rgba(0, 0, 0, 0.75),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- Hero CTA ---------- */
+/* ปุ่ม 2 บรรทัด + ไอคอนในวงกลม · ปุ่มหลักมีแสงวาบพาดผ่าน (::after) */
+.hero-cta {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 22px 12px 12px;
+  border-radius: 22px;
+  text-align: left;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+}
+.hero-cta:active {
+  transform: translateY(0);
+}
+.hero-cta:focus-visible {
+  outline: 2px solid #9a7950;
+  outline-offset: 3px;
+}
+.hero-cta-dark {
+  color: #fff;
+  background: linear-gradient(to bottom, #23272d, #0c0e10);
+  box-shadow:
+    0 14px 30px -14px rgba(12, 14, 16, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.hero-cta-dark:hover {
+  box-shadow:
+    0 20px 36px -16px rgba(12, 14, 16, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.hero-cta-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(232, 211, 173, 0.28) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: hero-cta-sweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes hero-cta-sweep {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  85%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+.hero-cta-light {
+  color: #0c0e10;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(12, 14, 16, 0.12);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px -10px rgba(12, 14, 16, 0.3);
+}
+.hero-cta-light:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+.hero-cta-ico {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #0c0e10;
+  background: linear-gradient(135deg, #f2dfc6, #c9a878);
+}
+.hero-cta-ico-dark {
+  color: #e8d3ad;
+  background: #0c0e10;
 }
 
 /* ---------- scroll reveal ---------- */
@@ -945,39 +1036,86 @@ html.is-loading {
   outline-offset: 3px;
 }
 
-/* ---------- Back to top ---------- */
-/* ซ่อนไว้จนกว่า script.js จะใส่ .is-visible (เลื่อนพ้น #home) */
-.back-to-top {
+/* ---------- ปุ่มลอย: LINE · โทร · Back to top ---------- */
+/* ซ่อนทั้งชุดไว้จนกว่า script.js จะใส่ .is-visible (เลื่อนพ้น #home) — โผล่ไล่จากล่างขึ้นบน */
+.float-dock {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 16px;
+  bottom: 16px;
   z-index: 40;
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  color: #e8d3ad;
-  background: #0c0e10;
-  box-shadow: 0 12px 30px -10px rgba(12, 14, 16, 0.55);
-  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   visibility: hidden;
+  transition: visibility 0s linear 0.45s;
+}
+.float-dock.is-visible {
+  visibility: visible;
+  transition: visibility 0s;
+}
+.float-dock > a {
+  opacity: 0;
   transform: translateY(16px) scale(0.9);
   transition:
     opacity 0.35s ease,
     transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1.3),
-    visibility 0s linear 0.35s,
+    filter 0.25s ease,
     background-color 0.25s ease;
 }
-.back-to-top.is-visible {
+.float-dock.is-visible > a {
   opacity: 1;
-  visibility: visible;
   transform: none;
-  transition:
-    opacity 0.35s ease,
-    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1.3),
-    visibility 0s,
-    background-color 0.25s ease;
+}
+.float-dock.is-visible > a:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.float-dock.is-visible > a:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.float-dock.is-visible > a:hover {
+  transform: translateY(-2px);
+  transition-delay: 0s;
+}
+.float-btn,
+.back-to-top {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px -10px rgba(12, 14, 16, 0.55);
+}
+.float-btn + .float-btn {
+  margin-top: 12px;
+}
+.float-btn:hover {
+  filter: brightness(1.06);
+}
+.float-btn:focus-visible {
+  outline: 2px solid #9a7950;
+  outline-offset: 3px;
+}
+.float-line {
+  background: linear-gradient(to bottom, #45d65f, #1fb93b);
+}
+.float-line img {
+  width: 26px;
+  height: auto;
+}
+.float-phone {
+  color: #0c0e10;
+  background: linear-gradient(to bottom, #fff, #f2dfc6);
+  box-shadow:
+    0 12px 30px -10px rgba(12, 14, 16, 0.45),
+    inset 0 0 0 1px rgba(12, 14, 16, 0.08);
+}
+
+.back-to-top {
+  margin-top: 12px;
+  color: #e8d3ad;
+  background: #0c0e10;
+  transition: background-color 0.25s ease;
 }
 .back-to-top:hover {
   background: #23272d;
@@ -1009,9 +1147,14 @@ html.is-loading {
   stroke-dashoffset: calc(1 - var(--progress, 0));
 }
 @media (min-width: 1024px) {
-  .back-to-top {
+  .float-dock {
     right: 32px;
     bottom: 32px;
+  }
+  .float-btn,
+  .back-to-top {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -1139,6 +1282,7 @@ html.is-loading {
 
 @media (prefers-reduced-motion: reduce) {
   .why-foil,
+  .hero-cta-dark::after,
   .back-to-top:hover svg.feather,
   .faq-item[open] .faq-a {
     animation: none;
@@ -1155,7 +1299,7 @@ html.is-loading {
   .cat-more svg,
   .cat-title,
   .cat-desc,
-  .back-to-top,
+  .float-dock > a,
   .footer-link,
   .social-btn,
   .cta-cat-icon,
@@ -1179,11 +1323,24 @@ html.is-loading {
     transition: none;
   }
 
-  .cta:hover {
+  .cta:hover,
+  .hero-cta:hover,
+  .float-dock.is-visible > a:hover {
     transform: none;
   }
 
   #mobile-menu.is-open nav a {
     transition-delay: 0s;
+  }
+}
+
+/* ---------- Hero background (LCP) ---------- */
+/* อยู่ที่นี่แทน class bg-[url(...)] เพราะ url ใน assets/tailwind.css จะอ้างอิงจากโฟลเดอร์ assets/ */
+.hero-bg {
+  background-image: url("images/bg-home-mb.webp");
+}
+@media (min-width: 768px) {
+  .hero-bg {
+    background-image: url("images/bg-home.webp");
   }
 }

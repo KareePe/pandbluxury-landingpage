@@ -4,45 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>P and B Luxury | รับซื้อแบรนด์เนมมือสอง</title>
-    <link rel="icon" href="assets/logo/pb-logo.webp" type="image/png" />
+    <!-- =====================================================
+       SEO — โดเมนหลัก https://pandbluxury.com ถ้าเปลี่ยนโดเมน ให้แทนที่
+       ทุกจุดในไฟล์นี้ + robots.txt + sitemap.xml + llms.txt
+  ====================================================== -->
+    <title>
+      รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา | P and B
+      Luxury พระราม 3
+    </title>
+    <meta
+      name="description"
+      content="P and B Luxury รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา รองเท้า Chanel, Louis Vuitton, Hermès, Rolex ประเมินราคาฟรีผ่าน LINE มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ"
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1"
+    />
+    <link rel="canonical" href="https://pandbluxury.com/" />
+    <link rel="alternate" hreflang="th-TH" href="https://pandbluxury.com/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://pandbluxury.com/"
+    />
+    <meta name="theme-color" content="#0c0e10" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="geo.region" content="TH-10" />
+    <meta name="geo.placename" content="Bangkok" />
+
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:site_name" content="P and B Luxury" />
+    <meta property="og:url" content="https://pandbluxury.com/" />
+    <meta
+      property="og:title"
+      content="รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม | P and B Luxury"
+    />
+    <meta
+      property="og:description"
+      content="รับฝากเลี้ยง ซื้อ-ขายกระเป๋า เครื่องประดับ นาฬิกาแบรนด์เนม ส่งรูปประเมินราคาฟรีทาง LINE มีหน้าร้านที่ Terminal 21 พระราม 3"
+    />
+    <meta
+      property="og:image"
+      content="https://pandbluxury.com/assets/images/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="กระเป๋า เครื่องประดับ และนาฬิกาแบรนด์เนมที่ P and B Luxury รับฝากเลี้ยง ซื้อ-ขาย"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม | P and B Luxury"
+    />
+    <meta
+      name="twitter:description"
+      content="รับฝากเลี้ยง ซื้อ-ขายกระเป๋า เครื่องประดับ นาฬิกาแบรนด์เนม ส่งรูปประเมินราคาฟรีทาง LINE"
+    />
+    <meta
+      name="twitter:image"
+      content="https://pandbluxury.com/assets/images/og-image.jpg"
+    />
+
+    <!-- Icons / PWA -->
+    <link
+      rel="icon"
+      href="assets/icons/app/icon-32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="assets/icons/app/icon-192.png"
+      type="image/png"
+      sizes="192x192"
+    />
+    <link rel="apple-touch-icon" href="assets/icons/app/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Noto Sans Thai", "sans-serif"],
-            },
-            colors: {
-              black: "#0c0e10",
-              brand: {
-                gold: "#9A7950",
-                cream: "#F7F1E9",
-                dark: "#0c0e10",
-              },
-            },
-            boxShadow: {
-              soft: "0 10px 35px rgba(0,0,0,.06)",
-            },
-          },
-        },
-      };
-    </script>
-
-    <!-- รูป hero (LCP) อยู่ใน CSS background — preload ให้เบราว์เซอร์เริ่มโหลดทันที
-         ไม่ต้องรอ Tailwind คอมไพล์ class bg-[url(...)] ก่อน -->
+    <!-- รูป hero (LCP) อยู่ใน CSS background (.hero-bg) — preload ให้เบราว์เซอร์เริ่มโหลดทันที
+         ไม่ต้องรอดาวน์โหลด stylesheet ก่อน -->
     <link
       rel="preload"
       as="image"
@@ -57,19 +111,422 @@
       media="(min-width: 768px)"
       fetchpriority="high"
     />
+    <!-- Tailwind build แบบ static (แทน CDN ที่ต้องคอมไพล์ในเบราว์เซอร์)
+         แก้ class ใน index.html แล้วรัน `npm run build:css` ทุกครั้ง -->
+    <link rel="stylesheet" href="assets/tailwind.css" />
     <link rel="stylesheet" href="assets/style.css" />
-    <noscript><style>#preloader { display: none; }</style></noscript>
+    <noscript
+      ><style>
+        #preloader {
+          display: none;
+        }
+      </style></noscript
+    >
+    <!-- Structured data (Schema.org) — ข้อความใน FAQPage ต้องตรงกับ #faq ในหน้า -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Store",
+            "@id": "https://pandbluxury.com/#business",
+            "name": "P and B Luxury",
+            "alternateName": ["PandB Luxury", "พี แอนด์ บี ลักชัวรี่"],
+            "description": "ร้านรับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา รองเท้า ประเมินราคาฟรี มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ",
+            "url": "https://pandbluxury.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://pandbluxury.com/assets/logo/pb-logo.png",
+              "width": 1774,
+              "height": 887
+            },
+            "image": [
+              "https://pandbluxury.com/assets/images/shoppandb.webp",
+              "https://pandbluxury.com/assets/images/og-image.jpg"
+            ],
+            "telephone": "+66656590444",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ห้อง G030 ชั้น G ศูนย์การค้า Terminal 21 พระราม 3 เลขที่ 356 ถนนพระรามที่ 3 แขวงบางโคล่",
+              "addressLocality": "เขตบางคอแหลม",
+              "addressRegion": "กรุงเทพมหานคร",
+              "postalCode": "10120",
+              "addressCountry": "TH"
+            },
+            "hasMap": "https://share.google/OV2egbbfQahBO937X",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "12:00",
+                "closes": "22:00"
+              }
+            ],
+            "areaServed": {
+              "@type": "City",
+              "name": "กรุงเทพมหานคร"
+            },
+            "knowsAbout": [
+              "รับฝากเลี้ยงแบรนด์เนม",
+              "ซื้อ-ขายแบรนด์เนม",
+              "รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสอง",
+              "ประเมินราคาแบรนด์เนม",
+              "ตรวจสอบสินค้าแบรนด์เนม",
+              "Chanel",
+              "Louis Vuitton",
+              "Hermès",
+              "Dior",
+              "Gucci",
+              "Celine",
+              "Prada",
+              "Bottega Veneta",
+              "Saint Laurent",
+              "Loewe",
+              "Cartier",
+              "Fendi",
+              "Van Cleef & Arpels",
+              "Rolex",
+              "Patek Philippe"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+66656590444",
+                "contactType": "customer service",
+                "availableLanguage": ["th"],
+                "url": "https://lin.ee/Sz1y9LO"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/pandbluxuryy/",
+              "https://www.instagram.com/p.and.b7909/",
+              "https://lin.ee/Sz1y9LO"
+            ],
+            "makesOffer": {
+              "@id": "https://pandbluxury.com/#service"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://pandbluxury.com/#service",
+            "name": "รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสอง",
+            "serviceType": "รับฝากเลี้ยง ซื้อ-ขายสินค้าแบรนด์เนมมือสอง",
+            "description": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา รองเท้า และเครื่องประดับแบรนด์เนมมือสอง ประเมินราคาเบื้องต้นฟรีจากรูปทาง LINE และตรวจสอบสินค้าที่หน้าร้านก่อนเสนอราคา",
+            "provider": {
+              "@id": "https://pandbluxury.com/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "กรุงเทพมหานคร"
+            },
+            "brand": [
+              {
+                "@type": "Brand",
+                "name": "Chanel"
+              },
+              {
+                "@type": "Brand",
+                "name": "Louis Vuitton"
+              },
+              {
+                "@type": "Brand",
+                "name": "Hermès"
+              },
+              {
+                "@type": "Brand",
+                "name": "Dior"
+              },
+              {
+                "@type": "Brand",
+                "name": "Gucci"
+              },
+              {
+                "@type": "Brand",
+                "name": "Celine"
+              },
+              {
+                "@type": "Brand",
+                "name": "Prada"
+              },
+              {
+                "@type": "Brand",
+                "name": "Bottega Veneta"
+              },
+              {
+                "@type": "Brand",
+                "name": "Saint Laurent"
+              },
+              {
+                "@type": "Brand",
+                "name": "Loewe"
+              },
+              {
+                "@type": "Brand",
+                "name": "Cartier"
+              },
+              {
+                "@type": "Brand",
+                "name": "Fendi"
+              },
+              {
+                "@type": "Brand",
+                "name": "Van Cleef & Arpels"
+              },
+              {
+                "@type": "Brand",
+                "name": "Rolex"
+              },
+              {
+                "@type": "Brand",
+                "name": "Patek Philippe"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "สินค้าที่รับฝากเลี้ยง ซื้อ-ขาย",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนมมือสอง",
+                    "description": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนมมือสองจากหลากหลายแบรนด์",
+                    "image": "https://pandbluxury.com/assets/images/categories/categories-1.webp"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "รับฝากเลี้ยง ซื้อ-ขายนาฬิกาแบรนด์เนมมือสอง",
+                    "description": "รับฝากเลี้ยง ซื้อ-ขายนาฬิกาแบรนด์เนมและนาฬิกาหรู",
+                    "image": "https://pandbluxury.com/assets/images/categories/categories-2.webp"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง",
+                    "description": "รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย",
+                    "image": "https://pandbluxury.com/assets/images/categories/categories-3.webp"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "รับฝากเลี้ยง ซื้อ-ขายเครื่องประดับแบรนด์เนมมือสอง",
+                    "description": "รับฝากเลี้ยง ซื้อ-ขายเครื่องประดับแบรนด์เนมและสินค้าแฟชั่น",
+                    "image": "https://pandbluxury.com/assets/images/categories/categories-4.webp"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://pandbluxury.com/#website",
+            "url": "https://pandbluxury.com/",
+            "name": "P and B Luxury",
+            "inLanguage": "th-TH",
+            "publisher": {
+              "@id": "https://pandbluxury.com/#business"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pandbluxury.com/#webpage",
+            "url": "https://pandbluxury.com/",
+            "name": "รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา | P and B Luxury พระราม 3",
+            "isPartOf": {
+              "@id": "https://pandbluxury.com/#website"
+            },
+            "about": {
+              "@id": "https://pandbluxury.com/#business"
+            },
+            "inLanguage": "th-TH",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://pandbluxury.com/assets/images/og-image.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "mainEntity": {
+              "@id": "https://pandbluxury.com/#faq"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://pandbluxury.com/#faq",
+            "inLanguage": "th-TH",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "รับฝากเลี้ยง ซื้อ-ขายแบรนด์อะไรบ้าง?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมชั้นนำ เช่น Chanel, Louis Vuitton, Hermès, Dior, Gucci, Celine, Prada, Bottega Veneta, Saint Laurent, Loewe, Cartier, Fendi, Van Cleef & Arpels, Rolex, Patek Philippe และแบรนด์อื่น ๆ โดยการรับฝากเลี้ยง ซื้อ-ขายขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า อุปกรณ์ประกอบ และผลการตรวจสอบสินค้าเป็นรายกรณี"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "รับฝากเลี้ยง ซื้อ-ขายของแบรนด์เนมมือสองสภาพใช้งานไหม?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "รับค่ะ P and B Luxury รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสองทั้งสภาพสวยและสภาพผ่านการใช้งาน ราคาขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า และอุปกรณ์ประกอบ"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ต้องมีใบเสร็จหรือกล่องครบหรือไม่?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ไม่จำเป็นต้องมีครบค่ะ ไม่มีใบเสร็จหรือกล่องก็ขายได้ อุปกรณ์ประกอบที่มีเป็นหนึ่งในปัจจัยที่ใช้พิจารณาราคา"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ส่งรูปให้ประเมินก่อนได้ไหม?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ได้ค่ะ ถ่ายรูปสินค้าแล้วส่งมาทาง LINE ทีมงานจะประเมินราคาเบื้องต้นให้ฟรี ไม่มีค่าใช้จ่าย"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "มีหน้าร้านหรือไม่?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "มีค่ะ หน้าร้านอยู่ที่ Terminal 21 พระราม 3 ชั้น G ห้อง G030 เลขที่ 356 ถนนพระรามที่ 3 แขวงบางโคล่ เขตบางคอแหลม กรุงเทพฯ 10120 เปิด 12.00–22.00 น. แนะนำให้นัดหมายทาง LINE ก่อนเข้าร้าน"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ใช้เอกสารอะไรในการขาย?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "บัตรประชาชน หรือ Passport และเลขบัญชีที่รับโอนต้องเป็นชื่อเดียวกับหน้าบัตร"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ราคาที่ประเมินจากรูปเป็นราคาสุดท้ายหรือไม่?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ยังไม่ใช่ราคาสุดท้ายค่ะ ราคาจากรูปเป็นราคาคร่าว ๆ ราคารับฝากเลี้ยง ซื้อ-ขายจริงจะแจ้งหลังตรวจสอบสินค้าที่หน้าร้าน"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ใช้เวลานานแค่ไหนในการประเมิน?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ของถึงร้าน ตรวจเสร็จ ตกลงราคาเรียบร้อย รับเงินได้เลยค่ะ"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "ประเมินราคามีค่าใช้จ่ายไหม?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ไม่มีค่าใช้จ่ายค่ะ ประเมินราคาฟรีทั้งการส่งรูปทาง LINE และการนำสินค้าเข้ามาที่หน้าร้าน"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "รับฝากเลี้ยง ซื้อ-ขายสินค้าประเภทไหนบ้าง?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนม นาฬิกาแบรนด์เนมและนาฬิกาหรู รองเท้าแบรนด์เนมทั้งผู้หญิงและผู้ชาย และเครื่องประดับแบรนด์เนม"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://pandbluxury.com/#process",
+            "name": "ขั้นตอนการขายแบรนด์เนมมือสองกับ P and B Luxury",
+            "inLanguage": "th-TH",
+            "description": "ขายแบรนด์เนมมือสองใน 6 ขั้นตอน เริ่มจากส่งรูปทาง LINE แล้วนำสินค้าเข้ามาตรวจสอบและรับเงินที่หน้าร้าน",
+            "estimatedCost": {
+              "@type": "MonetaryAmount",
+              "currency": "THB",
+              "value": "0"
+            },
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "ส่งรูปสินค้า",
+                "text": "ถ่ายรูปสินค้าที่ต้องการขาย ส่งมาให้เราประเมินเบื้องต้นทาง LINE",
+                "url": "https://pandbluxury.com/#process"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "ประเมินเบื้องต้น",
+                "text": "ทีมงานพิจารณาข้อมูล และประเมินราคาเบื้องต้น",
+                "url": "https://pandbluxury.com/#process"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "นัดหมายเข้าร้าน",
+                "text": "นัดหมายวันและเวลา เพื่อนำสินค้าเข้ามาที่ร้าน",
+                "url": "https://pandbluxury.com/#process"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "ตรวจสอบสินค้า",
+                "text": "ตรวจสอบรายละเอียด และความถูกต้องของสินค้า",
+                "url": "https://pandbluxury.com/#process"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "เสนอราคารับฝากเลี้ยง ซื้อ-ขาย",
+                "text": "แจ้งราคาหลังตรวจสอบ เพื่อให้ลูกค้าพิจารณา",
+                "url": "https://pandbluxury.com/#process"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "ตัดสินใจขาย",
+                "text": "เมื่อตกลงราคาเรียบร้อย ดำเนินการรับฝากเลี้ยง ซื้อ-ขาย",
+                "url": "https://pandbluxury.com/#process"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body class="bg-white text-brand-dark font-sans">
     <!-- =====================================================
-       PRELOADER — สไตล์อยู่ใน assets/style.css (ไม่พึ่ง Tailwind
-       เพราะ Tailwind CDN คอมไพล์ทีหลัง) · script แยกไว้ตรงนี้
+       PRELOADER — สไตล์อยู่ใน assets/style.css (ไม่พึ่ง Tailwind) · script แยกไว้ตรงนี้
        ไม่ให้ขึ้นกับ feather/script.js ถ้า CDN ล่มจะได้ไม่ค้าง
   ====================================================== -->
     <div id="preloader" role="status" aria-label="กำลังโหลด">
       <div class="preloader-inner">
-        <img src="assets/logo/pb-logo.webp" alt="" class="preloader-logo" />
+        <img
+          src="assets/logo/pb-logo.webp"
+          alt=""
+          class="preloader-logo"
+          width="480"
+          height="240"
+          decoding="async"
+        />
         <span class="preloader-line"></span>
       </div>
     </div>
@@ -119,12 +576,15 @@
             src="assets/logo/pb-logo.webp"
             alt="P and B Luxury"
             class="h-12 lg:h-14 w-auto"
+            width="480"
+            height="240"
+            decoding="async"
           />
         </a>
 
         <!-- Desktop navigation -->
         <nav
-          class="hidden lg:flex items-center gap-8 text-[14px] font-medium"
+          class="hidden xl:flex items-center gap-7 text-[14px] font-medium whitespace-nowrap"
           aria-label="เมนูหลัก"
         >
           <a href="#home" class="hover:text-brand-gold transition">หน้าแรก</a>
@@ -132,13 +592,13 @@
             >เกี่ยวกับเรา</a
           >
           <a href="#categories" class="hover:text-brand-gold transition"
-            >รับซื้ออะไรบ้าง</a
+            >รับฝากเลี้ยง ซื้อ-ขายอะไรบ้าง</a
           >
           <a href="#brands" class="hover:text-brand-gold transition"
-            >แบรนด์ที่รับซื้อ</a
+            >แบรนด์ที่รับฝากเลี้ยง ซื้อ-ขาย</a
           >
           <a href="#process" class="hover:text-brand-gold transition"
-            >ขั้นตอนการรับซื้อ</a
+            >ขั้นตอนการรับฝากเลี้ยง ซื้อ-ขาย</a
           >
           <a href="#contact" class="hover:text-brand-gold transition"
             >ติดต่อเรา</a
@@ -146,7 +606,9 @@
         </nav>
 
         <!-- Desktop contact -->
-        <div class="hidden lg:flex items-center gap-5 text-sm">
+        <div
+          class="hidden xl:flex items-center gap-5 text-sm whitespace-nowrap"
+        >
           <a
             href="tel:0656590444"
             class="inline-flex items-center gap-2 hover:opacity-70 transition"
@@ -169,6 +631,9 @@
               src="assets/icons/line-cta-b.webp"
               alt="LINE"
               class="h-6 w-auto"
+              width="128"
+              height="123"
+              decoding="async"
             /><span>LINE</span>
           </a>
         </div>
@@ -177,7 +642,7 @@
         <button
           id="menu-toggle"
           type="button"
-          class="lg:hidden -mr-2 w-10 h-10 relative flex items-center justify-center"
+          class="xl:hidden -mr-2 w-10 h-10 relative flex items-center justify-center"
           aria-controls="mobile-menu"
           aria-expanded="false"
           aria-label="เปิดเมนู"
@@ -192,7 +657,7 @@
       </div>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="lg:hidden bg-white">
+      <div id="mobile-menu" class="xl:hidden bg-white">
         <div class="menu-clip">
           <div class="max-w-[1280px] mx-auto px-5 py-2 border-t border-black/5">
             <nav
@@ -212,17 +677,17 @@
               <a
                 href="#categories"
                 class="py-3 border-b border-black/5 last:border-0 hover:text-brand-gold transition"
-                >รับซื้ออะไรบ้าง</a
+                >รับฝากเลี้ยง ซื้อ-ขายอะไรบ้าง</a
               >
               <a
                 href="#brands"
                 class="py-3 border-b border-black/5 last:border-0 hover:text-brand-gold transition"
-                >แบรนด์ที่รับซื้อ</a
+                >แบรนด์ที่รับฝากเลี้ยง ซื้อ-ขาย</a
               >
               <a
                 href="#process"
                 class="py-3 border-b border-black/5 last:border-0 hover:text-brand-gold transition"
-                >ขั้นตอนการรับซื้อ</a
+                >ขั้นตอนการรับฝากเลี้ยง ซื้อ-ขาย</a
               >
               <a
                 href="#contact"
@@ -251,6 +716,9 @@
                   src="assets/icons/line-cta-b.webp"
                   alt="LINE"
                   class="h-6 w-auto"
+                  width="128"
+                  height="123"
+                  decoding="async"
                 /><span>LINE</span>
               </a>
             </div>
@@ -263,10 +731,7 @@
       <!-- =====================================================
          HERO
     ====================================================== -->
-      <section
-        id="home"
-        class="relative bg-cover bg-center bg-[url('assets/images/bg-home-mb.webp')] md:bg-[url('assets/images/bg-home.webp')]"
-      >
+      <section id="home" class="hero-bg relative bg-cover bg-center">
         <!-- overlay: ทึบฝั่งซ้ายให้ตัวอักษรอ่านออก แล้วเปิดโปร่งฝั่งขวาให้เห็นสินค้า -->
         <div
           class="absolute inset-0 bg-gradient-to-r from-[#f8f2ea]/95 from-5% via-[#f8f2ea]/75 via-38% to-transparent to-72%"
@@ -287,7 +752,7 @@
             <h1
               class="text-[38px] sm:text-[48px] lg:text-[58px] font-light leading-[1.2] mb-0"
             >
-              รับซื้อแบรนด์เนมมือสอง
+              รับฝากเลี้ยง <br />ซื้อ-ขายแบรนด์เนม
             </h1>
 
             <h2
@@ -305,24 +770,43 @@
               พร้อมบริการที่หน้าร้านในกรุงเทพฯ
             </p>
 
-            <!-- CTA -->
+            <!-- CTA — ปุ่ม 2 บรรทัด (บรรทัดล่างตอบข้อสงสัยก่อนกด) · ปุ่มหลักมีแสงวาบทุก 4 วิ -->
             <div class="flex flex-col sm:flex-row gap-3 mb-12">
               <a
                 href="https://lin.ee/Sz1y9LO"
                 target="_blank"
                 rel="noopener"
-                class="cta inline-flex justify-center items-center gap-3 bg-gradient-to-b from-[#23272d] to-[#0c0e10] hover:from-[#2d333b] hover:to-[#14171b] text-white px-[30px] py-4 rounded-[20px] font-medium"
+                class="hero-cta hero-cta-dark"
               >
-                <i data-feather="camera" class="w-5 h-5"></i>
-                ส่งรูปประเมินราคา
+                <span class="hero-cta-ico"
+                  ><i data-feather="camera" class="w-5 h-5"></i
+                ></span>
+                <span>
+                  <span class="block text-[16px] font-medium leading-tight"
+                    >ส่งรูปประเมินราคา</span
+                  >
+                  <span class="block text-[12px] text-white/60 mt-0.5"
+                    >ฟรี · ผ่าน LINE</span
+                  >
+                </span>
+                <i
+                  data-feather="arrow-up-right"
+                  class="w-4 h-4 ml-auto sm:ml-3 opacity-60"
+                ></i>
               </a>
 
-              <a
-                href="#store"
-                class="cta inline-flex justify-center items-center gap-3 bg-gradient-to-b from-white to-[#f1ebe2] hover:from-white hover:to-white border border-[#0c0e10]/25 px-[30px] py-4 rounded-[20px] font-medium"
-              >
-                <i data-feather="map-pin" class="w-5 h-5"></i>
-                นัดเข้าร้าน
+              <a href="#store" class="hero-cta hero-cta-light">
+                <span class="hero-cta-ico hero-cta-ico-dark"
+                  ><i data-feather="map-pin" class="w-5 h-5"></i
+                ></span>
+                <span>
+                  <span class="block text-[16px] font-medium leading-tight"
+                    >นัดเข้าร้าน</span
+                  >
+                  <span class="block text-[12px] text-[#4a4541] mt-0.5"
+                    >Terminal 21 พระราม 3</span
+                  >
+                </span>
               </a>
             </div>
 
@@ -407,11 +891,11 @@
                 What we buy
               </p>
               <h2 class="text-[28px] lg:text-[34px] font-light">
-                รับซื้ออะไรบ้าง?
+                รับฝากเลี้ยง ซื้อ-ขายอะไรบ้าง?
               </h2>
             </div>
             <p class="text-[15px] text-[#4a4541] max-w-[360px] leading-[1.8]">
-              เรารับซื้อสินค้าแบรนด์เนมมือสองหลากหลายประเภท
+              เรารับฝากเลี้ยง ซื้อ-ขายสินค้าแบรนด์เนมมือสองหลากหลายประเภท
               ประเมินราคาโดยทีมผู้เชี่ยวชาญ
             </p>
           </div>
@@ -425,12 +909,16 @@
               >
 
               <div
-                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
+                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden !bg-[#eee4da]"
               >
                 <img
-                  src="assets/images/categories/categories-1.webp"
+                  src="assets/images/bag-cut.png"
                   alt="กระเป๋าแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  width="244"
+                  height="178"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -440,7 +928,7 @@
               <p
                 class="cat-desc mt-1.5 text-[14px] text-[#4a4541] leading-[1.75]"
               >
-                รับซื้อกระเป๋าแบรนด์เนมมือสองจากหลากหลายแบรนด์
+                รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนมมือสองจากหลากหลายแบรนด์
               </p>
             </article>
 
@@ -455,9 +943,13 @@
                 class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
-                  src="assets/images/categories/categories-2.webp"
+                  src="assets/images/gel-cut.png"
                   alt="นาฬิกาแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  width="244"
+                  height="178"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -467,7 +959,7 @@
               <p
                 class="cat-desc mt-1.5 text-[14px] text-[#4a4541] leading-[1.75]"
               >
-                รับซื้อนาฬิกาแบรนด์เนมและนาฬิกาหรู
+                รับฝากเลี้ยง ซื้อ-ขายนาฬิกาแบรนด์เนมและนาฬิกาหรู
               </p>
             </article>
 
@@ -485,6 +977,10 @@
                   src="assets/images/categories/categories-3.webp"
                   alt="รองเท้าแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  width="244"
+                  height="178"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -494,7 +990,7 @@
               <p
                 class="cat-desc mt-1.5 text-[14px] text-[#4a4541] leading-[1.75]"
               >
-                รับซื้อรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย
+                รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย
               </p>
             </article>
 
@@ -512,6 +1008,10 @@
                   src="assets/images/categories/categories-4.webp"
                   alt="เครื่องประดับ"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  width="244"
+                  height="178"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -521,7 +1021,7 @@
               <p
                 class="cat-desc mt-1.5 text-[14px] text-[#4a4541] leading-[1.75]"
               >
-                รับซื้อเครื่องประดับแบรนด์เนมและสินค้าแฟชั่น
+                รับฝากเลี้ยง ซื้อ-ขายเครื่องประดับแบรนด์เนมและสินค้าแฟชั่น
               </p>
             </article>
           </div>
@@ -532,8 +1032,8 @@
               type="button"
               class="cat-more"
               data-gallery="assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_13_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_3_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_8_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_12_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_20_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_11_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_2_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_15_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_16_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_5_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_6_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_18_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_7_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_14_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_4_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_9_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_10_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_17_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_21_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_22_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_23_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_1_0.jpg,assets/images/buy/LINE_ALBUM_รูปทำคอนเทนต์_260922_19_0.jpg"
-              data-title="รับซื้ออะไรบ้าง"
-              aria-label="ดูแกลเลอรีสินค้าที่รับซื้อ"
+              data-title="รับฝากเลี้ยง ซื้อ-ขายอะไรบ้าง"
+              aria-label="ดูแกลเลอรีสินค้าที่รับฝากเลี้ยง ซื้อ-ขาย"
             >
               ดูแกลเลอรี
               <span class="cat-more-count"></span>
@@ -555,7 +1055,7 @@
               Brands we buy
             </p>
             <h2 class="text-[28px] lg:text-[34px] font-light">
-              แบรนด์ที่เรารับซื้อ
+              แบรนด์ที่เรารับฝากเลี้ยง ซื้อ-ขาย
             </h2>
             <p class="text-[15px] text-[#4a4541] mt-3">
               เรารับพิจารณาสินค้าจากแบรนด์ชั้นนำหลากหลายแบรนด์
@@ -574,6 +1074,10 @@
                   alt="Chanel"
                   class="brand-logo"
                   style="--w: 72"
+                  width="310"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -582,6 +1086,10 @@
                   alt="Louis Vuitton"
                   class="brand-logo"
                   style="--w: 69"
+                  width="275"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -590,6 +1098,10 @@
                   alt="Hermès"
                   class="brand-logo"
                   style="--w: 77"
+                  width="361"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -598,6 +1110,10 @@
                   alt="Dior"
                   class="brand-logo"
                   style="--w: 106"
+                  width="772"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -606,6 +1122,10 @@
                   alt="Gucci"
                   class="brand-logo"
                   style="--w: 85"
+                  width="454"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -614,6 +1134,10 @@
                   alt="Celine"
                   class="brand-logo"
                   style="--w: 119"
+                  width="1023"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -622,6 +1146,10 @@
                   alt="Prada"
                   class="brand-logo"
                   style="--w: 133"
+                  width="1321"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -630,6 +1158,10 @@
                   alt="Bottega Veneta"
                   class="brand-logo"
                   style="--w: 94"
+                  width="585"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -638,6 +1170,10 @@
                   alt="Saint Laurent"
                   class="brand-logo"
                   style="--w: 148"
+                  width="1725"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -646,6 +1182,10 @@
                   alt="Loewe"
                   class="brand-logo"
                   style="--w: 57"
+                  width="175"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <!-- ชุดซ้ำสำหรับวนต่อเนื่อง — ซ่อนจาก screen reader -->
@@ -655,6 +1195,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 72"
+                  width="310"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -663,6 +1207,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 69"
+                  width="275"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -671,6 +1219,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 77"
+                  width="361"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -679,6 +1231,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 106"
+                  width="772"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -687,6 +1243,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 85"
+                  width="454"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -695,6 +1255,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 119"
+                  width="1023"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -703,6 +1267,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 133"
+                  width="1321"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -711,6 +1279,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 94"
+                  width="585"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -719,6 +1291,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 148"
+                  width="1725"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -727,6 +1303,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 57"
+                  width="175"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
             </ul>
@@ -739,6 +1319,10 @@
                   alt="Celine"
                   class="brand-logo"
                   style="--w: 119"
+                  width="1023"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -747,6 +1331,10 @@
                   alt="Prada"
                   class="brand-logo"
                   style="--w: 133"
+                  width="1321"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -755,6 +1343,10 @@
                   alt="Bottega Veneta"
                   class="brand-logo"
                   style="--w: 94"
+                  width="585"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -763,6 +1355,10 @@
                   alt="Saint Laurent"
                   class="brand-logo"
                   style="--w: 148"
+                  width="1725"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -771,6 +1367,10 @@
                   alt="Loewe"
                   class="brand-logo"
                   style="--w: 57"
+                  width="175"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -779,6 +1379,10 @@
                   alt="Chanel"
                   class="brand-logo"
                   style="--w: 72"
+                  width="310"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -787,6 +1391,10 @@
                   alt="Louis Vuitton"
                   class="brand-logo"
                   style="--w: 69"
+                  width="275"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -795,6 +1403,10 @@
                   alt="Hermès"
                   class="brand-logo"
                   style="--w: 77"
+                  width="361"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -803,6 +1415,10 @@
                   alt="Dior"
                   class="brand-logo"
                   style="--w: 106"
+                  width="772"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li>
@@ -811,6 +1427,10 @@
                   alt="Gucci"
                   class="brand-logo"
                   style="--w: 85"
+                  width="454"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <!-- ชุดซ้ำสำหรับวนต่อเนื่อง — ซ่อนจาก screen reader -->
@@ -820,6 +1440,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 119"
+                  width="1023"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -828,6 +1452,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 133"
+                  width="1321"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -836,6 +1464,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 94"
+                  width="585"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -844,6 +1476,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 148"
+                  width="1725"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -852,6 +1488,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 57"
+                  width="175"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -860,6 +1500,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 72"
+                  width="310"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -868,6 +1512,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 69"
+                  width="275"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -876,6 +1524,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 77"
+                  width="361"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -884,6 +1536,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 106"
+                  width="772"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
               <li aria-hidden="true">
@@ -892,6 +1548,10 @@
                   alt=""
                   class="brand-logo"
                   style="--w: 85"
+                  width="454"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </li>
             </ul>
@@ -903,8 +1563,8 @@
             และอีกมากมาย
           </p>
           <p class="text-center text-xs text-[#8a847d] mt-3">
-            *การรับซื้อขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า อุปกรณ์ประกอบ
-            และผลการตรวจสอบสินค้าเป็นรายกรณี
+            *การรับฝากเลี้ยง ซื้อ-ขายขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า
+            อุปกรณ์ประกอบ และผลการตรวจสอบสินค้าเป็นรายกรณี
           </p>
         </div>
       </section>
@@ -927,9 +1587,8 @@
               Why P and B
             </p>
             <h2 class="text-[30px] lg:text-[42px] font-light leading-[1.3]">
-              <span class="inline-block">ทำไมต้องขาย</span
-              ><span class="inline-block"
-                >แบรนด์เนม<span class="why-foil">กับเรา?</span></span
+              <span class="inline-block"
+                >ทำไม<span class="why-foil">ต้องเรา?</span></span
               >
             </h2>
           </div>
@@ -940,7 +1599,13 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/gel-icon.webp" alt="" width="44" height="44"
+                    ><img
+                      src="assets/icons/gel-icon.webp"
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      decoding="async"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >01</span
@@ -961,7 +1626,13 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/shop-icon.webp" alt="" width="44" height="44"
+                    ><img
+                      src="assets/icons/shop-icon.webp"
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      decoding="async"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >02</span
@@ -982,19 +1653,26 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/check-sh-icon.webp" alt="" width="44" height="44"
+                    ><img
+                      src="assets/icons/check-sh-icon.webp"
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      decoding="async"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >03</span
                   >
                 </div>
                 <h3 class="text-[20px] lg:text-[22px] font-light">
-                  ตรวจสอบสินค้าก่อนรับซื้อ
+                  ตรวจสอบสินค้าก่อนรับฝากเลี้ยง ซื้อ-ขาย
                 </h3>
                 <p
                   class="text-[14px] text-[#4a4541] leading-[1.85] mt-2 max-w-[380px]"
                 >
-                  สินค้าได้รับการตรวจสอบรายละเอียด ก่อนเข้าสู่กระบวนการรับซื้อ
+                  สินค้าได้รับการตรวจสอบรายละเอียด
+                  ก่อนเข้าสู่กระบวนการรับฝากเลี้ยง ซื้อ-ขาย
                 </p>
               </div>
             </article>
@@ -1003,7 +1681,13 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/message-icon.webp" alt="" width="44" height="44"
+                    ><img
+                      src="assets/icons/message-icon.webp"
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      decoding="async"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >04</span
@@ -1024,14 +1708,20 @@
               <div class="relative z-[1]">
                 <div class="flex items-start justify-between mb-10">
                   <span class="why-icon"
-                    ><img src="assets/icons/bag-icon.webp" alt="" width="44" height="44"
+                    ><img
+                      src="assets/icons/bag-icon.webp"
+                      alt=""
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                      decoding="async"
                   /></span>
                   <span class="text-[12px] tracking-[0.2em] text-[#0c0e10]/30"
                     >05</span
                   >
                 </div>
                 <h3 class="text-[20px] lg:text-[22px] font-light">
-                  รับซื้อสินค้าหลากหลาย
+                  รับฝากเลี้ยง ซื้อ-ขายสินค้าหลากหลาย
                 </h3>
                 <p
                   class="text-[14px] text-[#4a4541] leading-[1.85] mt-2 max-w-[380px]"
@@ -1056,7 +1746,7 @@
               How it works
             </p>
             <h2 class="text-[30px] lg:text-[40px] font-light leading-[1.3]">
-              ขั้นตอนการรับซื้อ
+              ขั้นตอนการรับฝากเลี้ยง ซื้อ-ขาย
             </h2>
             <p class="text-[15px] text-[#4a4541] mt-3">ง่าย สะดวก รวดเร็ว</p>
           </div>
@@ -1153,7 +1843,9 @@
                       >05</span
                     >
                   </div>
-                  <h3 class="text-[17px] font-medium">เสนอราคารับซื้อ</h3>
+                  <h3 class="text-[17px] font-medium">
+                    เสนอราคารับฝากเลี้ยง ซื้อ-ขาย
+                  </h3>
                   <p class="text-[13.5px] text-[#4a4541] leading-[1.75] mt-1.5">
                     แจ้งราคาหลังตรวจสอบ เพื่อให้ลูกค้าพิจารณา
                   </p>
@@ -1171,7 +1863,7 @@
                   </div>
                   <h3 class="text-[17px] font-medium">ตัดสินใจขาย</h3>
                   <p class="text-[13.5px] text-[#4a4541] leading-[1.75] mt-1.5">
-                    เมื่อตกลงราคาเรียบร้อย ดำเนินการรับซื้อ
+                    เมื่อตกลงราคาเรียบร้อย ดำเนินการรับฝากเลี้ยง ซื้อ-ขาย
                   </p>
                 </article>
               </div>
@@ -1215,7 +1907,7 @@
             </p>
             <h2 class="text-[28px] lg:text-[38px] font-light leading-[1.3]">
               <span class="inline-block">ตรวจสอบสินค้าอย่างละเอียด</span>
-              <span class="inline-block">ก่อนรับซื้อ</span>
+              <span class="inline-block">ก่อนรับฝากเลี้ยง ซื้อ-ขาย</span>
             </h2>
             <p class="text-[15px] text-[#4a4541] mt-3">
               เพื่อให้การซื้อขายเป็นไปอย่างชัดเจนและเป็นธรรม
@@ -1233,6 +1925,9 @@
                   alt="ผู้เชี่ยวชาญสวมถุงมือขาวตรวจสอบกระเป๋าแบรนด์เนม"
                   class="w-full h-full object-cover"
                   loading="lazy"
+                  width="900"
+                  height="900"
+                  decoding="async"
                 />
               </div>
               <figcaption class="inspect-badge">
@@ -1351,6 +2046,9 @@
                 alt="หน้าร้าน P and B Luxury ตอนกลางคืน มองเห็นกระเป๋าแบรนด์เนมในร้าน"
                 class="w-full h-full object-cover"
                 loading="lazy"
+                width="900"
+                height="900"
+                decoding="async"
               />
               <figcaption class="store-tag">Our Store</figcaption>
             </figure>
@@ -1378,7 +2076,8 @@
                     ><i data-feather="map-pin" class="w-4 h-4"></i
                   ></span>
                   <span>
-                    ห้อง G030 ชั้น G เลขที่ 356 ถนนพระรามที่ 3<br />
+                    Terminal 21 พระราม 3 ห้อง G030 ชั้น G<br />
+                    เลขที่ 356 ถนนพระรามที่ 3<br />
                     แขวงบางโคล่ เขตบางคอแหลม กรุงเทพมหานคร 10120
                   </span>
                 </li>
@@ -1402,8 +2101,14 @@
                   <span class="store-icon"
                     ><i data-feather="message-circle" class="w-4 h-4"></i
                   ></span>
-                  <!-- TODO: ใส่ LINE ID จริง -->
-                  <span>LINE: @yourbrand</span>
+                  <!-- TODO: ใส่ LINE ID จริง (เช่น LINE: @xxxx) -->
+                  <a
+                    href="https://lin.ee/Sz1y9LO"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-[#e8d3ad] transition"
+                    >LINE Official Account</a
+                  >
                 </li>
               </ul>
 
@@ -1468,11 +2173,15 @@
           <div class="grid md:grid-cols-2 gap-4 items-start">
             <details class="faq-item reveal" style="--i: 0">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">01</span>
-                <span class="flex-1">รับซื้อแบรนด์อะไรบ้าง?</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >01</span
+                >
+                <span class="flex-1">รับฝากเลี้ยง ซื้อ-ขายแบรนด์อะไรบ้าง?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
               <div class="faq-a">
+                <p class="mb-3">รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมชั้นนำ เช่น</p>
                 <ul class="faq-brands">
                   <li>CHANEL</li>
                   <li>LOUIS VUITTON</li>
@@ -1486,52 +2195,87 @@
                   <li>LOEWE</li>
                   <li>CARTIER</li>
                   <li>FENDI</li>
-                  <li>VCA</li>
+                  <li>VAN CLEEF &amp; ARPELS</li>
                   <li>ROLEX</li>
                   <li>PATEK PHILIPPE</li>
                 </ul>
+                <p class="mt-3">
+                  และแบรนด์อื่น ๆ โดยการรับฝากเลี้ยง ซื้อ-ขายขึ้นอยู่กับแบรนด์
+                  รุ่น สภาพสินค้า อุปกรณ์ประกอบ และผลการตรวจสอบสินค้าเป็นรายกรณี
+                </p>
               </div>
             </details>
 
             <details class="faq-item reveal" style="--i: 1">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">02</span>
-                <span class="flex-1">รับซื้อของแบรนด์เนมมือสองสภาพใช้งานไหม?</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >02</span
+                >
+                <span class="flex-1"
+                  >รับฝากเลี้ยง ซื้อ-ขายของแบรนด์เนมมือสองสภาพใช้งานไหม?</span
+                >
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">รับค่ะ</p>
+              <p class="faq-a">
+                รับค่ะ P and B Luxury รับฝากเลี้ยง
+                ซื้อ-ขายแบรนด์เนมมือสองทั้งสภาพสวยและสภาพผ่านการใช้งาน
+                ราคาขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า และอุปกรณ์ประกอบ
+              </p>
             </details>
 
             <details class="faq-item reveal" style="--i: 2">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">03</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >03</span
+                >
                 <span class="flex-1">ต้องมีใบเสร็จหรือกล่องครบหรือไม่?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">อุปกรณ์ไม่จำเป็นต้องมีครบค่ะ</p>
+              <p class="faq-a">
+                ไม่จำเป็นต้องมีครบค่ะ ไม่มีใบเสร็จหรือกล่องก็ขายได้
+                อุปกรณ์ประกอบที่มีเป็นหนึ่งในปัจจัยที่ใช้พิจารณาราคา
+              </p>
             </details>
 
             <details class="faq-item reveal" style="--i: 3">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">04</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >04</span
+                >
                 <span class="flex-1">ส่งรูปให้ประเมินก่อนได้ไหม?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">สามารถส่งรูปประเมินก่อนได้ค่ะ</p>
+              <p class="faq-a">
+                ได้ค่ะ ถ่ายรูปสินค้าแล้วส่งมาทาง LINE
+                ทีมงานจะประเมินราคาเบื้องต้นให้ฟรี ไม่มีค่าใช้จ่าย
+              </p>
             </details>
 
             <details class="faq-item reveal" style="--i: 4">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">05</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >05</span
+                >
                 <span class="flex-1">มีหน้าร้านหรือไม่?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">มีค่ะ อยู่ที่ Terminal 21 พระราม 3 ชั้น G</p>
+              <p class="faq-a">
+                มีค่ะ หน้าร้านอยู่ที่ Terminal 21 พระราม 3 ชั้น G ห้อง G030
+                เลขที่ 356 ถนนพระรามที่ 3 แขวงบางโคล่ เขตบางคอแหลม กรุงเทพฯ
+                10120 เปิด 12.00–22.00 น. แนะนำให้นัดหมายทาง LINE ก่อนเข้าร้าน
+              </p>
             </details>
 
             <details class="faq-item reveal" style="--i: 5">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">06</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >06</span
+                >
                 <span class="flex-1">ใช้เอกสารอะไรในการขาย?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
@@ -1543,20 +2287,66 @@
 
             <details class="faq-item reveal" style="--i: 6">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">07</span>
-                <span class="flex-1">ราคาที่ประเมินจากรูปเป็นราคาสุดท้ายหรือไม่?</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >07</span
+                >
+                <span class="flex-1"
+                  >ราคาที่ประเมินจากรูปเป็นราคาสุดท้ายหรือไม่?</span
+                >
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">ราคาคร่าว ๆ ค่ะ ยังไม่ใช่ราคาสุดท้าย</p>
+              <p class="faq-a">
+                ยังไม่ใช่ราคาสุดท้ายค่ะ ราคาจากรูปเป็นราคาคร่าว ๆ
+                ราคารับฝากเลี้ยง ซื้อ-ขายจริงจะแจ้งหลังตรวจสอบสินค้าที่หน้าร้าน
+              </p>
             </details>
 
             <details class="faq-item reveal" style="--i: 7">
               <summary class="faq-q">
-                <span class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0">08</span>
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >08</span
+                >
                 <span class="flex-1">ใช้เวลานานแค่ไหนในการประเมิน?</span>
                 <span class="faq-icon" aria-hidden="true"></span>
               </summary>
-              <p class="faq-a">ของถึงร้าน ตรวจเสร็จ ตกลงราคาเรียบร้อย รับเงินได้เลยค่ะ</p>
+              <p class="faq-a">
+                ของถึงร้าน ตรวจเสร็จ ตกลงราคาเรียบร้อย รับเงินได้เลยค่ะ
+              </p>
+            </details>
+
+            <details class="faq-item reveal" style="--i: 8">
+              <summary class="faq-q">
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >09</span
+                >
+                <span class="flex-1">ประเมินราคามีค่าใช้จ่ายไหม?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">
+                ไม่มีค่าใช้จ่ายค่ะ ประเมินราคาฟรีทั้งการส่งรูปทาง LINE
+                และการนำสินค้าเข้ามาที่หน้าร้าน
+              </p>
+            </details>
+
+            <details class="faq-item reveal" style="--i: 9">
+              <summary class="faq-q">
+                <span
+                  class="text-[12px] tracking-[0.2em] text-[#816845] w-7 shrink-0"
+                  >10</span
+                >
+                <span class="flex-1"
+                  >รับฝากเลี้ยง ซื้อ-ขายสินค้าประเภทไหนบ้าง?</span
+                >
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a">
+                รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนม
+                นาฬิกาแบรนด์เนมและนาฬิกาหรู รองเท้าแบรนด์เนมทั้งผู้หญิงและผู้ชาย
+                และเครื่องประดับแบรนด์เนม
+              </p>
             </details>
           </div>
 
@@ -1623,6 +2413,8 @@
                   class="h-6 w-auto"
                   width="25"
                   height="24"
+                  loading="lazy"
+                  decoding="async"
                 />
                 LINE ติดต่อเรา
               </a>
@@ -1636,7 +2428,7 @@
               </a>
             </div>
 
-            <!-- หมวดที่รับซื้อ — feather ไม่มีไอคอนรองเท้า/อัญมณี จึงวาด SVG เองในสไตล์เส้นเดียวกัน -->
+            <!-- หมวดที่รับฝากเลี้ยง ซื้อ-ขาย — feather ไม่มีไอคอนรองเท้า/อัญมณี จึงวาด SVG เองในสไตล์เส้นเดียวกัน -->
             <div class="text-center lg:text-left">
               <p class="text-[13px] tracking-wide text-white/60 mb-4">
                 ไม่ว่าจะเป็น
@@ -1719,11 +2511,16 @@
               src="assets/logo/pb-logo.webp"
               alt="P and B Luxury"
               class="h-12 w-auto invert"
+              loading="lazy"
+              width="480"
+              height="240"
+              decoding="async"
             />
             <p
               class="text-[14px] text-white/55 leading-[1.8] mt-5 max-w-[260px]"
             >
-              รับซื้อแบรนด์เนมมือสอง กระเป๋า นาฬิกา รองเท้า เครื่องประดับ
+              ร้านรับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสองที่ Terminal 21 พระราม 3
+              กรุงเทพฯ รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา รองเท้า เครื่องประดับ
               ประเมินราคายุติธรรม
             </p>
           </div>
@@ -1738,9 +2535,15 @@
             <nav class="flex flex-col gap-3 text-[14px] text-white/70">
               <a href="#home" class="footer-link">หน้าแรก</a>
               <a href="#about" class="footer-link">เกี่ยวกับเรา</a>
-              <a href="#categories" class="footer-link">รับซื้ออะไรบ้าง</a>
-              <a href="#brands" class="footer-link">แบรนด์ที่รับซื้อ</a>
-              <a href="#process" class="footer-link">ขั้นตอนการรับซื้อ</a>
+              <a href="#categories" class="footer-link"
+                >รับฝากเลี้ยง ซื้อ-ขายอะไรบ้าง</a
+              >
+              <a href="#brands" class="footer-link"
+                >แบรนด์ที่รับฝากเลี้ยง ซื้อ-ขาย</a
+              >
+              <a href="#process" class="footer-link"
+                >ขั้นตอนการรับฝากเลี้ยง ซื้อ-ขาย</a
+              >
               <a href="#contact" class="footer-link">ติดต่อเรา</a>
             </nav>
           </div>
@@ -1759,8 +2562,8 @@
                   class="w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]"
                 ></i>
                 <span
-                  >ห้อง G030 ชั้น G เลขที่ 356 ถนนพระรามที่ 3 แขวงบางโคล่
-                  เขตบางคอแหลม กรุงเทพมหานคร 10120</span
+                  >Terminal 21 พระราม 3 ห้อง G030 ชั้น G เลขที่ 356 ถนนพระรามที่
+                  3 แขวงบางโคล่ เขตบางคอแหลม กรุงเทพมหานคร 10120</span
                 >
               </li>
               <li class="flex gap-3">
@@ -1805,6 +2608,8 @@
                   class="w-6 h-auto"
                   width="25"
                   height="24"
+                  loading="lazy"
+                  decoding="async"
                 />
                 ส่งรูปทาง LINE
               </a>
@@ -1845,7 +2650,8 @@
 
         <!-- ข้อความปฏิเสธความเกี่ยวข้องกับเจ้าของเครื่องหมายการค้า (โลโก้แบรนด์ในหน้า) -->
         <p class="mt-6 text-[11.5px] leading-[1.8] text-white/35 max-w-[820px]">
-          P and B Luxury เป็นธุรกิจอิสระที่ให้บริการรับซื้อและจำหน่ายสินค้าแบรนด์เนมมือสอง
+          P and B Luxury เป็นธุรกิจอิสระที่ให้บริการรับฝากเลี้ยง
+          ซื้อ-ขายสินค้าแบรนด์เนมมือสอง
           และไม่มีความเกี่ยวข้องหรือได้รับการแต่งตั้งจากเจ้าของเครื่องหมายการค้า
           เว้นแต่จะระบุไว้เป็นอย่างอื่น
         </p>
@@ -1853,17 +2659,44 @@
     </footer>
 
     <!-- ปุ่มกลับขึ้นบนสุด — โผล่เมื่อเลื่อนพ้น hero · วงแหวนทองบอกระยะที่เลื่อนมาแล้ว -->
-    <a
-      href="#home"
-      id="back-to-top"
-      class="back-to-top"
-      aria-label="กลับขึ้นบนสุด"
-    >
-      <svg class="btt-ring" viewBox="0 0 52 52" aria-hidden="true">
-        <circle cx="26" cy="26" r="24" pathLength="1" />
-      </svg>
-      <i data-feather="arrow-up" class="w-5 h-5"></i>
-    </a>
+    <!-- ปุ่มลอยมุมขวาล่าง เรียงบน→ล่าง: LINE · โทร · กลับขึ้นบนสุด -->
+    <div class="float-dock">
+      <a
+        href="https://lin.ee/Sz1y9LO"
+        target="_blank"
+        rel="noopener"
+        class="float-btn float-line"
+        aria-label="ส่งรูปประเมินราคาทาง LINE"
+        title="LINE"
+      >
+        <img
+          src="assets/icons/line-cta.webp"
+          alt=""
+          width="25"
+          height="24"
+          decoding="async"
+        />
+      </a>
+      <a
+        href="tel:0656590444"
+        class="float-btn float-phone"
+        aria-label="โทรหาเรา 065-659-0444"
+        title="065-659-0444"
+      >
+        <i data-feather="phone" class="w-5 h-5"></i>
+      </a>
+      <a
+        href="#home"
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="กลับขึ้นบนสุด"
+      >
+        <svg class="btt-ring" viewBox="0 0 52 52" aria-hidden="true">
+          <circle cx="26" cy="26" r="24" pathLength="1" />
+        </svg>
+        <i data-feather="arrow-up" class="w-5 h-5"></i>
+      </a>
+    </div>
 
     <!-- =====================================================
        GALLERY POPUP (ใช้กับการ์ดใน #categories)
@@ -1887,7 +2720,7 @@
         </div>
 
         <div class="gallery-stage tile relative overflow-hidden rounded-md">
-          <img class="gallery-img w-full h-full object-contain" src="" alt="" />
+          <img class="gallery-img w-full h-full object-contain" alt="" />
           <button
             type="button"
             class="gallery-prev gallery-btn gallery-nav left-3"
@@ -1908,7 +2741,10 @@
       </div>
     </dialog>
 
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/feather.min.js"
+    ></script>
+    <script defer src="assets/script.js"></script>
   </body>
 </html>

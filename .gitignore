@@ -11,3 +11,5 @@ pandbluxury-47ee3.web.app-20260924T213523.json
 _headers
 .assetsignore
 wrangler.jsonc
+node_modules/
+demo-hero-cta.html

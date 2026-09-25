@@ -1,0 +1,30 @@
+# P and B Luxury — https://pandbluxury.com
+User-agent: *
+Allow: /
+
+# AI / answer engines — อนุญาตให้อ่านเพื่อตอบคำถามและอ้างอิงร้าน
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://pandbluxury.com/sitemap.xml
