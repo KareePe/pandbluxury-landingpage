@@ -1,7 +1,5 @@
 // P and B Luxury - header interactions
-// โหลดหลัง feather-icons เพราะต้องใช้ <svg> ที่ feather แปลงจาก <i> แล้ว
-
-feather.replace();
+// ไอคอน feather ฝังเป็น <svg> ใน index.html แล้ว (ไม่ต้องโหลด feather.min.js จาก CDN)
 
 (function () {
   const toggle = document.getElementById("menu-toggle");
@@ -273,4 +271,19 @@ feather.replace();
     { passive: true }
   );
   syncProgress();
+})();
+
+(function () {
+  // แผนที่ร้าน: สร้าง iframe Google Maps ตอนกดเท่านั้น
+  const btn = document.querySelector(".store-map-load");
+  if (!btn) return;
+
+  btn.addEventListener("click", function () {
+    const frame = document.createElement("iframe");
+    frame.src = btn.dataset.mapSrc;
+    frame.title = btn.dataset.mapTitle;
+    frame.referrerPolicy = "no-referrer-when-downgrade";
+    frame.allowFullscreen = true;
+    btn.replaceWith(frame);
+  });
 })();

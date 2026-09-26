@@ -14,7 +14,7 @@
     </title>
     <meta
       name="description"
-      content="P and B Luxury รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา รองเท้า Chanel, Louis Vuitton, Hermès, Rolex ประเมินราคาฟรีผ่าน LINE มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ"
+      content="P and B Luxury รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา Chanel, Louis Vuitton, Hermès, Rolex ประเมินราคาฟรีผ่าน LINE มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ"
     />
     <meta
       name="robots"
@@ -87,13 +87,21 @@
     <link rel="apple-touch-icon" href="assets/icons/app/apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <!-- Google Font -->
+    <!-- Google Font — โหลดแบบไม่บล็อก render (media=print แล้วสลับเป็น all เมื่อโหลดเสร็จ)
+         display=swap ทำให้ข้อความขึ้นด้วยฟอนต์สำรองก่อน แล้วค่อยเปลี่ยน -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;700&display=swap"
+        rel="stylesheet"
+    /></noscript>
 
     <!-- รูป hero (LCP) อยู่ใน CSS background (.hero-bg) — preload ให้เบราว์เซอร์เริ่มโหลดทันที
          ไม่ต้องรอดาวน์โหลด stylesheet ก่อน -->
@@ -113,8 +121,8 @@
     />
     <!-- Tailwind build แบบ static (แทน CDN ที่ต้องคอมไพล์ในเบราว์เซอร์)
          แก้ class ใน index.html แล้วรัน `npm run build:css` ทุกครั้ง -->
-    <link rel="stylesheet" href="assets/tailwind.css?v=0fdd30dd" />
-    <link rel="stylesheet" href="assets/style.css?v=336a8c32" />
+    <link rel="stylesheet" href="assets/tailwind.css?v=aee737ff" />
+    <link rel="stylesheet" href="assets/style.css?v=6f57129f" />
     <noscript
       ><style>
         #preloader {
@@ -132,7 +140,7 @@
             "@id": "https://pandbluxury.com/#business",
             "name": "P and B Luxury",
             "alternateName": ["PandB Luxury", "พี แอนด์ บี ลักชัวรี่"],
-            "description": "ร้านรับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา รองเท้า ประเมินราคาฟรี มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ",
+            "description": "ร้านรับฝากเลี้ยง ซื้อ-ขายแบรนด์เนม กระเป๋า เครื่องประดับ นาฬิกา ประเมินราคาฟรี มีหน้าร้านจริงที่ Terminal 21 พระราม 3 กรุงเทพฯ",
             "url": "https://pandbluxury.com/",
             "logo": {
               "@type": "ImageObject",
@@ -219,7 +227,7 @@
             "@id": "https://pandbluxury.com/#service",
             "name": "รับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสอง",
             "serviceType": "รับฝากเลี้ยง ซื้อ-ขายสินค้าแบรนด์เนมมือสอง",
-            "description": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา รองเท้า และเครื่องประดับแบรนด์เนมมือสอง ประเมินราคาเบื้องต้นฟรีจากรูปทาง LINE และตรวจสอบสินค้าที่หน้าร้านก่อนเสนอราคา",
+            "description": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา และเครื่องประดับแบรนด์เนมมือสอง ประเมินราคาเบื้องต้นฟรีจากรูปทาง LINE และตรวจสอบสินค้าที่หน้าร้านก่อนเสนอราคา",
             "provider": {
               "@id": "https://pandbluxury.com/#business"
             },
@@ -309,15 +317,6 @@
                     "name": "รับฝากเลี้ยง ซื้อ-ขายนาฬิกาแบรนด์เนมมือสอง",
                     "description": "รับฝากเลี้ยง ซื้อ-ขายนาฬิกาแบรนด์เนมและนาฬิกาหรู",
                     "image": "https://pandbluxury.com/assets/images/categories/categories-2.webp"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง",
-                    "description": "รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย",
-                    "image": "https://pandbluxury.com/assets/images/categories/categories-3.webp"
                   }
                 },
                 {
@@ -446,7 +445,7 @@
                 "name": "รับฝากเลี้ยง ซื้อ-ขายสินค้าประเภทไหนบ้าง?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนม นาฬิกาแบรนด์เนมและนาฬิกาหรู รองเท้าแบรนด์เนมทั้งผู้หญิงและผู้ชาย และเครื่องประดับแบรนด์เนม"
+                  "text": "รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนม นาฬิกาแบรนด์เนมและนาฬิกาหรู และเครื่องประดับแบรนด์เนม"
                 }
               }
             ]
@@ -515,7 +514,7 @@
   <body class="bg-white text-brand-dark font-sans">
     <!-- =====================================================
        PRELOADER — สไตล์อยู่ใน assets/style.css (ไม่พึ่ง Tailwind) · script แยกไว้ตรงนี้
-       ไม่ให้ขึ้นกับ feather/script.js ถ้า CDN ล่มจะได้ไม่ค้าง
+       ไม่ให้ขึ้นกับ script.js ถ้าโหลดช้า/ล้มจะได้ไม่ค้าง
   ====================================================== -->
     <div id="preloader" role="status" aria-label="กำลังโหลด">
       <div class="preloader-inner">
@@ -613,10 +612,7 @@
             href="tel:0656590444"
             class="inline-flex items-center gap-2 hover:opacity-70 transition"
           >
-            <i
-              data-feather="phone"
-              class="w-4 h-4 text-[#0c0e10] fill-[#0c0e10]"
-            ></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-4 h-4 text-[#0c0e10] fill-[#0c0e10]" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             065-659-0444
           </a>
 
@@ -629,7 +625,7 @@
           >
             <img
               src="assets/icons/line-cta-b.webp"
-              alt="LINE"
+              alt=""
               class="h-6 w-auto"
               width="128"
               height="123"
@@ -648,10 +644,10 @@
           aria-label="เปิดเมนู"
         >
           <span class="menu-icon icon-open">
-            <i data-feather="menu" class="w-6 h-6"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu w-6 h-6" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </span>
           <span class="menu-icon icon-close">
-            <i data-feather="x" class="w-6 h-6"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x w-6 h-6" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </span>
         </button>
       </div>
@@ -698,10 +694,7 @@
 
             <div class="flex items-center gap-5 text-sm py-4">
               <a href="tel:0656590444" class="inline-flex items-center gap-2">
-                <i
-                  data-feather="phone"
-                  class="w-4 h-4 text-[#0c0e10] fill-[#0c0e10]"
-                ></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-4 h-4 text-[#0c0e10] fill-[#0c0e10]" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 065-659-0444
               </a>
 
@@ -758,7 +751,7 @@
             <h2
               class="text-[20px] sm:text-[24px] lg:text-[30px] font-normal leading-[1.32] mb-5"
             >
-              กระเป๋า นาฬิกา รองเท้า เครื่องประดับ
+              กระเป๋า นาฬิกา เครื่องประดับ
             </h2>
 
             <p
@@ -779,8 +772,7 @@
                 class="hero-cta hero-cta-dark"
               >
                 <span class="hero-cta-ico"
-                  ><i data-feather="camera" class="w-5 h-5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera w-5 h-5" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></span>
                 <span>
                   <span class="block text-[16px] font-medium leading-tight"
                     >ส่งรูปประเมินราคา</span
@@ -789,16 +781,12 @@
                     >ฟรี · ผ่าน LINE</span
                   >
                 </span>
-                <i
-                  data-feather="arrow-up-right"
-                  class="w-4 h-4 ml-auto sm:ml-3 opacity-60"
-                ></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right w-4 h-4 ml-auto sm:ml-3 opacity-60" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
 
               <a href="#store" class="hero-cta hero-cta-light">
                 <span class="hero-cta-ico hero-cta-ico-dark"
-                  ><i data-feather="map-pin" class="w-5 h-5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-5 h-5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
                 <span>
                   <span class="block text-[16px] font-medium leading-tight"
                     >นัดเข้าร้าน</span
@@ -818,11 +806,7 @@
                 <div
                   class="w-11 h-11 rounded-full shrink-0 flex items-center justify-center bg-gradient-to-br from-[#f7ecd9] to-[#e4d3b4] ring-1 ring-brand-gold/25 group-hover:ring-brand-gold/60 transition"
                 >
-                  <i
-                    data-feather="check-circle"
-                    stroke-width="1.25"
-                    class="w-5 h-5 text-[#816845]"
-                  ></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle w-5 h-5 text-[#816845]" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 </div>
                 <div>
                   <div class="font-medium">ประเมินราคาฟรี</div>
@@ -838,11 +822,7 @@
                 <div
                   class="w-11 h-11 rounded-full shrink-0 flex items-center justify-center bg-gradient-to-br from-[#f7ecd9] to-[#e4d3b4] ring-1 ring-brand-gold/25 group-hover:ring-brand-gold/60 transition"
                 >
-                  <i
-                    data-feather="award"
-                    stroke-width="1.25"
-                    class="w-5 h-5 text-[#816845]"
-                  ></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award w-5 h-5 text-[#816845]" aria-hidden="true"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
                 </div>
                 <div>
                   <div class="font-medium">ตรวจสอบสินค้า</div>
@@ -858,11 +838,7 @@
                 <div
                   class="w-11 h-11 rounded-full shrink-0 flex items-center justify-center bg-gradient-to-br from-[#f7ecd9] to-[#e4d3b4] ring-1 ring-brand-gold/25 group-hover:ring-brand-gold/60 transition"
                 >
-                  <i
-                    data-feather="home"
-                    stroke-width="1.25"
-                    class="w-5 h-5 text-[#816845]"
-                  ></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home w-5 h-5 text-[#816845]" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                 </div>
                 <div>
                   <div class="font-medium">มีหน้าร้านจริง</div>
@@ -900,7 +876,7 @@
             </p>
           </div>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             <article class="cat-card group reveal" style="--i: 0">
               <span class="cat-rule block h-px bg-black/15 mb-5"></span>
               <span
@@ -943,7 +919,7 @@
                 class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
               >
                 <img
-                  src="assets/images/watch-cut.png"
+                  src="assets/images/watch-cut.webp"
                   alt="นาฬิกาแบรนด์เนม"
                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   width="244"
@@ -963,42 +939,12 @@
               </p>
             </article>
 
+
             <article class="cat-card group reveal" style="--i: 2">
               <span class="cat-rule block h-px bg-black/15 mb-5"></span>
               <span
                 class="block text-[12px] tracking-[0.2em] text-[#816845] mb-4"
                 >03</span
-              >
-
-              <div
-                class="cat-media tile relative w-full aspect-[4/3] overflow-hidden"
-              >
-                <img
-                  src="assets/images/categories/categories-3.webp"
-                  alt="รองเท้าแบรนด์เนม"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  width="244"
-                  height="178"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-
-              <h3 class="cat-title mt-5 text-[17px] font-medium">
-                รองเท้าแบรนด์เนม
-              </h3>
-              <p
-                class="cat-desc mt-1.5 text-[14px] text-[#4a4541] leading-[1.75]"
-              >
-                รับฝากเลี้ยง ซื้อ-ขายรองเท้าแบรนด์เนมมือสอง ทั้งผู้หญิงและผู้ชาย
-              </p>
-            </article>
-
-            <article class="cat-card group reveal" style="--i: 3">
-              <span class="cat-rule block h-px bg-black/15 mb-5"></span>
-              <span
-                class="block text-[12px] tracking-[0.2em] text-[#816845] mb-4"
-                >04</span
               >
 
               <div
@@ -1037,7 +983,7 @@
             >
               ดูแกลเลอรี
               <span class="cat-more-count"></span>
-              <i data-feather="arrow-right"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
           </div>
         </div>
@@ -1562,7 +1508,7 @@
           <p class="text-center text-[13px] tracking-wide text-[#816845] mt-12">
             และอีกมากมาย
           </p>
-          <p class="text-center text-xs text-[#8a847d] mt-3">
+          <p class="text-center text-xs text-[#756f68] mt-3">
             *การรับฝากเลี้ยง ซื้อ-ขายขึ้นอยู่กับแบรนด์ รุ่น สภาพสินค้า
             อุปกรณ์ประกอบ และผลการตรวจสอบสินค้าเป็นรายกรณี
           </p>
@@ -1726,7 +1672,7 @@
                 <p
                   class="text-[14px] text-[#4a4541] leading-[1.85] mt-2 max-w-[380px]"
                 >
-                  ไม่ว่าจะเป็นกระเป๋า นาฬิกา รองเท้า หรือเครื่องประดับ
+                  ไม่ว่าจะเป็นกระเป๋า นาฬิกา หรือเครื่องประดับ
                 </p>
               </div>
             </article>
@@ -1764,8 +1710,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="camera" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera w-5 h-5" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >01</span
                     >
@@ -1780,8 +1725,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="phone" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-5 h-5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >02</span
                     >
@@ -1805,8 +1749,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="calendar" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar w-5 h-5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >03</span
                     >
@@ -1821,8 +1764,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="search" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search w-5 h-5" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >04</span
                     >
@@ -1837,8 +1779,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="message-circle" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle w-5 h-5" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >05</span
                     >
@@ -1855,8 +1796,7 @@
                   <span class="step-bar"></span>
                   <div class="flex items-center justify-between mb-8">
                     <span class="step-icon"
-                      ><i data-feather="check-circle" class="w-5 h-5"></i
-                    ></span>
+                      ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle w-5 h-5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
                     <span class="text-[28px] font-light text-[#0c0e10]/15"
                       >06</span
                     >
@@ -1950,8 +1890,7 @@
                   >แบรนด์และรุ่น</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 1">
                 <span
@@ -1962,8 +1901,7 @@
                   >สภาพสินค้า</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 2">
                 <span
@@ -1974,8 +1912,7 @@
                   >รายละเอียดงานและวัสดุ</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 3">
                 <span
@@ -1986,8 +1923,7 @@
                   >Serial / Date Code หรือข้อมูลระบุตัวสินค้า</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 4">
                 <span
@@ -1998,8 +1934,7 @@
                   >อุปกรณ์ประกอบ</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 5">
                 <span
@@ -2010,8 +1945,7 @@
                   >ประวัติและเอกสารที่ลูกค้านำมาแสดง</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
               <li class="check-row reveal" style="--i: 6">
                 <span
@@ -2022,8 +1956,7 @@
                   >ปัจจัยด้านตลาดของสินค้า</span
                 >
                 <span class="check-mark"
-                  ><i data-feather="check" class="w-3.5 h-3.5"></i
-                ></span>
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check w-3.5 h-3.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
               </li>
             </ul>
           </div>
@@ -2073,8 +2006,7 @@
               <ul class="mt-7 border-t border-white/10">
                 <li class="store-row">
                   <span class="store-icon"
-                    ><i data-feather="map-pin" class="w-4 h-4"></i
-                  ></span>
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 h-4" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
                   <span>
                     Terminal 21 พระราม 3 ห้อง G030 ชั้น G<br />
                     เลขที่ 356 ถนนพระรามที่ 3<br />
@@ -2083,14 +2015,12 @@
                 </li>
                 <li class="store-row">
                   <span class="store-icon"
-                    ><i data-feather="clock" class="w-4 h-4"></i
-                  ></span>
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock w-4 h-4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
                   <span>เปิด–ปิด 12.00–22.00 น.</span>
                 </li>
                 <li class="store-row">
                   <span class="store-icon"
-                    ><i data-feather="phone" class="w-4 h-4"></i
-                  ></span>
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-4 h-4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
                   <a
                     href="tel:0656590444"
                     class="hover:text-[#e8d3ad] transition"
@@ -2099,8 +2029,7 @@
                 </li>
                 <li class="store-row">
                   <span class="store-icon"
-                    ><i data-feather="message-circle" class="w-4 h-4"></i
-                  ></span>
+                    ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle w-4 h-4" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
                   <!-- TODO: ใส่ LINE ID จริง (เช่น LINE: @xxxx) -->
                   <a
                     href="https://lin.ee/Sz1y9LO"
@@ -2119,7 +2048,7 @@
                   rel="noopener"
                   class="cta cta-on-dark inline-flex items-center gap-2 bg-[#f2dfc6] text-brand-dark px-5 h-12 rounded-full text-[14px] font-medium"
                 >
-                  <i data-feather="navigation" class="w-4 h-4"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-navigation w-4 h-4" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
                   นำทางด้วย Google Maps
                 </a>
                 <a
@@ -2133,18 +2062,31 @@
               </div>
             </div>
 
-            <!-- Map — ค้นด้วยชื่อร้านบน Google Maps (ไม่ต้องใช้ API key) -->
+            <!-- Map — ค้นด้วยชื่อร้านบน Google Maps (ไม่ต้องใช้ API key)
+                 โหลด iframe เมื่อกดปุ่มเท่านั้น (script.js) — Google Maps หนักและตั้ง third-party cookie -->
             <div
               class="store-map reveal md:col-span-2 lg:col-span-1"
               style="--i: 2"
             >
-              <iframe
-                src="https://maps.google.com/maps?q=PandB%20Luxury&hl=th&z=16&output=embed"
-                title="แผนที่ร้าน PandB Luxury ถ.พระรามที่ 3"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
-              ></iframe>
+              <button
+                type="button"
+                class="store-map-load"
+                data-map-src="https://maps.google.com/maps?q=PandB%20Luxury&hl=th&z=16&output=embed"
+                data-map-title="แผนที่ร้าน PandB Luxury ถ.พระรามที่ 3"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-7 h-7" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="text-[15px] font-medium">แสดงแผนที่ร้าน</span>
+                <span class="text-[12px] text-white/60">แตะเพื่อโหลด Google Maps</span>
+              </button>
+              <noscript
+                ><iframe
+                  src="https://maps.google.com/maps?q=PandB%20Luxury&hl=th&z=16&output=embed"
+                  title="แผนที่ร้าน PandB Luxury ถ.พระรามที่ 3"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe
+              ></noscript>
             </div>
           </div>
         </div>
@@ -2344,8 +2286,7 @@
               </summary>
               <p class="faq-a">
                 รับฝากเลี้ยง ซื้อ-ขายกระเป๋าแบรนด์เนม
-                นาฬิกาแบรนด์เนมและนาฬิกาหรู รองเท้าแบรนด์เนมทั้งผู้หญิงและผู้ชาย
-                และเครื่องประดับแบรนด์เนม
+                นาฬิกาแบรนด์เนมและนาฬิกาหรู และเครื่องประดับแบรนด์เนม
               </p>
             </details>
           </div>
@@ -2397,7 +2338,7 @@
                 rel="noopener"
                 class="cta cta-on-dark border border-white/70 bg-gradient-to-b from-[#23272d] to-[#0c0e10] hover:from-[#2d333b] hover:to-[#14171b] inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-[36px] py-4 rounded-[22px] text-[17px]"
               >
-                <i data-feather="camera" class="w-5 h-5"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera w-5 h-5" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                 ส่งรูปประเมินราคา
               </a>
 
@@ -2423,52 +2364,30 @@
                 href="tel:0656590444"
                 class="cta cta-on-dark bg-gradient-to-b from-white to-[#e9e3da] hover:from-white hover:to-[#f4f0ea] text-black inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-[36px] py-4 rounded-[22px] text-[17px] font-medium"
               >
-                <i data-feather="phone" class="w-5 h-5"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-5 h-5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 โทรหาเรา
               </a>
             </div>
 
-            <!-- หมวดที่รับฝากเลี้ยง ซื้อ-ขาย — feather ไม่มีไอคอนรองเท้า/อัญมณี จึงวาด SVG เองในสไตล์เส้นเดียวกัน -->
+            <!-- หมวดที่รับฝากเลี้ยง ซื้อ-ขาย — feather ไม่มีไอคอนอัญมณี จึงวาด SVG เองในสไตล์เส้นเดียวกัน -->
             <div class="text-center lg:text-left">
               <p class="text-[13px] tracking-wide text-white/60 mb-4">
                 ไม่ว่าจะเป็น
               </p>
 
-              <ul class="grid grid-cols-4 gap-4 sm:gap-7">
+              <ul class="grid grid-cols-3 gap-4 sm:gap-7">
                 <li class="cta-cat">
                   <span class="cta-cat-icon">
-                    <i data-feather="shopping-bag" class="w-5 h-5"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag w-5 h-5" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                   </span>
                   กระเป๋า
                 </li>
 
                 <li class="cta-cat">
                   <span class="cta-cat-icon">
-                    <i data-feather="watch" class="w-5 h-5"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-watch w-5 h-5" aria-hidden="true"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
                   </span>
                   นาฬิกา
-                </li>
-
-                <li class="cta-cat">
-                  <span class="cta-cat-icon">
-                    <svg
-                      viewBox="0 0 24 24"
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M2.5 17V9a1 1 0 0 1 1-1h2.5l1.5 2.5L10 6l4 4.5a6 6 0 0 0 3.6 1.8l1.3.2A3 3 0 0 1 21.5 15.5V17z"
-                      />
-                      <path d="M2.5 17v2.5h19V17" />
-                      <path d="M11 9.5l1.5-1.2M13 11.5l1.5-1.2" />
-                    </svg>
-                  </span>
-                  รองเท้า
                 </li>
 
                 <li class="cta-cat">
@@ -2520,7 +2439,7 @@
               class="text-[14px] text-white/55 leading-[1.8] mt-5 max-w-[260px]"
             >
               ร้านรับฝากเลี้ยง ซื้อ-ขายแบรนด์เนมมือสองที่ Terminal 21 พระราม 3
-              กรุงเทพฯ รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา รองเท้า เครื่องประดับ
+              กรุงเทพฯ รับฝากเลี้ยง ซื้อ-ขายกระเป๋า นาฬิกา เครื่องประดับ
               ประเมินราคายุติธรรม
             </p>
           </div>
@@ -2557,27 +2476,18 @@
             </p>
             <ul class="space-y-3.5 text-[14px] text-white/75 leading-[1.7]">
               <li class="flex gap-3">
-                <i
-                  data-feather="map-pin"
-                  class="w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]"
-                ></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 <span
                   >Terminal 21 พระราม 3 ห้อง G030 ชั้น G เลขที่ 356 ถนนพระรามที่
                   3 แขวงบางโคล่ เขตบางคอแหลม กรุงเทพมหานคร 10120</span
                 >
               </li>
               <li class="flex gap-3">
-                <i
-                  data-feather="clock"
-                  class="w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]"
-                ></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <span>เปิด–ปิด 12.00–22.00 น.</span>
               </li>
               <li class="flex gap-3">
-                <i
-                  data-feather="phone"
-                  class="w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]"
-                ></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-4 h-4 mt-1 shrink-0 text-[#e8d3ad]" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <a href="tel:0656590444" class="hover:text-white transition"
                   >065-659-0444</a
                 >
@@ -2620,7 +2530,7 @@
                 class="social-btn"
                 aria-label="Facebook"
               >
-                <i data-feather="facebook" class="w-5 h-5"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook w-5 h-5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
               <a
                 href="https://www.instagram.com/p.and.b7909?stkn=MXJrNHR4dmo4cmJxdA=="
@@ -2629,14 +2539,14 @@
                 class="social-btn"
                 aria-label="Instagram"
               >
-                <i data-feather="instagram" class="w-5 h-5"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram w-5 h-5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
             </div>
           </div>
         </div>
 
         <div
-          class="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between gap-4 text-[12px] text-white/40"
+          class="border-t border-white/10 mt-14 pt-6 flex flex-col md:flex-row justify-between gap-4 text-[12px] text-white/55"
         >
           <p>© 2026 P and B Luxury. All rights reserved.</p>
 
@@ -2649,7 +2559,7 @@
         </div>
 
         <!-- ข้อความปฏิเสธความเกี่ยวข้องกับเจ้าของเครื่องหมายการค้า (โลโก้แบรนด์ในหน้า) -->
-        <p class="mt-6 text-[11.5px] leading-[1.8] text-white/35 max-w-[820px]">
+        <p class="mt-6 text-[11.5px] leading-[1.8] text-white/50 max-w-[820px]">
           P and B Luxury เป็นธุรกิจอิสระที่ให้บริการรับฝากเลี้ยง
           ซื้อ-ขายสินค้าแบรนด์เนมมือสอง
           และไม่มีความเกี่ยวข้องหรือได้รับการแต่งตั้งจากเจ้าของเครื่องหมายการค้า
@@ -2683,7 +2593,7 @@
         aria-label="โทรหาเรา 065-659-0444"
         title="065-659-0444"
       >
-        <i data-feather="phone" class="w-5 h-5"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone w-5 h-5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
       </a>
       <a
         href="#home"
@@ -2694,7 +2604,7 @@
         <svg class="btt-ring" viewBox="0 0 52 52" aria-hidden="true">
           <circle cx="26" cy="26" r="24" pathLength="1" />
         </svg>
-        <i data-feather="arrow-up" class="w-5 h-5"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up w-5 h-5" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
       </a>
     </div>
 
@@ -2715,7 +2625,7 @@
             class="gallery-close gallery-btn"
             aria-label="ปิด"
           >
-            <i data-feather="x"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
         </div>
 
@@ -2726,14 +2636,14 @@
             class="gallery-prev gallery-btn gallery-nav left-3"
             aria-label="รูปก่อนหน้า"
           >
-            <i data-feather="chevron-left"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
           <button
             type="button"
             class="gallery-next gallery-btn gallery-nav right-3"
             aria-label="รูปถัดไป"
           >
-            <i data-feather="chevron-right"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
         </div>
 
@@ -2741,10 +2651,6 @@
       </div>
     </dialog>
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.2/dist/feather.min.js"
-    ></script>
-    <script defer src="assets/script.js?v=a0fbc8b4"></script>
+    <script defer src="assets/script.js?v=921d30e4"></script>
   </body>
 </html>

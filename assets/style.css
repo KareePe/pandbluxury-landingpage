@@ -837,6 +837,27 @@ html.is-loading {
 .store-map:hover iframe {
   filter: none;
 }
+.store-map-load {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  color: #f2dfc6;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(242, 223, 198, 0.1), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(255, 255, 255, 0.04) 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, rgba(255, 255, 255, 0.04) 39px 40px);
+  transition: background-color 0.3s ease;
+}
+.store-map-load:hover,
+.store-map-load:focus-visible {
+  background-color: rgba(255, 255, 255, 0.04);
+}
 @media (min-width: 1024px) {
   .store-map {
     min-height: 0;
