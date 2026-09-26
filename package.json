@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "build:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify",
-    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch"
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch",
+    "version:assets": "node scripts/version-assets.mjs",
+    "predeploy": "npm run build:css && npm run version:assets",
+    "deploy": "firebase deploy --only hosting"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19"

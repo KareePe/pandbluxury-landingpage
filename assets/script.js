@@ -111,6 +111,17 @@ feather.replace();
     thumbs.querySelectorAll(".gallery-thumb").forEach(function (t, i) {
       t.setAttribute("aria-current", String(i === index));
     });
+
+    // เลื่อนแถว thumbnail ให้รูปที่เลือกอยู่กลาง — คำนวณเองแทน scrollIntoView เพื่อไม่ให้หน้า/dialog เลื่อนตาม
+    const active = thumbs.children[index];
+    if (active) {
+      const box = thumbs.getBoundingClientRect();
+      const r = active.getBoundingClientRect();
+      thumbs.scrollTo({
+        left: thumbs.scrollLeft + (r.left - box.left) - (box.width - r.width) / 2,
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+      });
+    }
   }
 
   function open(trigger) {
@@ -122,6 +133,7 @@ feather.replace();
     dialog.classList.toggle("is-single", images.length < 2);
 
     thumbs.innerHTML = "";
+    thumbs.scrollLeft = 0;
     images.forEach(function (src, i) {
       const b = document.createElement("button");
       b.type = "button";
